@@ -15,6 +15,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 import re
+import csv
 
 logging.basicConfig(filename='log.txt', level=logging.INFO, 
                     format='%(asctime)s - %(levelname)s - %(message)s', filemode='w')
@@ -86,25 +87,22 @@ def scrape_url(url):
     if sitemap_items:
         return sitemap_items
 
-    # If sitemap fails or is empty, fall back to previous method
-    logging.info("Sitemap not found or empty, falling back to dynamic/static scraping.")
+    # If sitemap fails or is empty, fall back to dynamic scraping for link discovery.
+    logging.info("Sitemap not found or empty, falling back to dynamic scraping for link discovery.")
     
     processed_urls = set()
     driver = None
     try:
-        is_dynamic = 'quill.co' in url or 'substack.com' in url
-        if is_dynamic:
-            driver = get_driver(url)
-            page_source = driver.page_source
-            links = driver.find_elements(By.TAG_NAME, 'a')
-            a_tags = [{'href': link.get_attribute('href')} for link in links if link.get_attribute('href')]
-        else:
-            scraper = cloudscraper.create_scraper()
-            response = scraper.get(url, timeout=15)
-            response.raise_for_status()
-            page_source = response.text
-            soup = BeautifulSoup(page_source, 'html.parser')
-            a_tags = soup.find_all('a', href=True)
+        # Always use Selenium for initial link discovery for robustness against SPAs
+        driver = get_driver(url)
+        page_source = driver.page_source # Keep page source for fallback
+        links = driver.find_elements(By.TAG_NAME, 'a')
+        a_tags = [{'href': link.get_attribute('href')} for link in links if link.get_attribute('href')]
+        driver.quit() # Quit driver after finding links
+        driver = None # Reset driver variable
+
+        # For processing the links, we can be faster and use cloudscraper
+        scraper = cloudscraper.create_scraper()
 
         for a_tag in a_tags:
             link = a_tag['href']
@@ -115,27 +113,23 @@ def scrape_url(url):
             if clean_url in processed_urls or urlparse(url).netloc != parsed_url.netloc or clean_url == url:
                 continue
 
-            if urlparse(url).path != "/" and not parsed_url.path.startswith(urlparse(url).path):
+            # Heuristic to identify article-like URLs.
+            # Articles often have longer paths with multiple segments or hyphens.
+            path_segments = parsed_url.path.strip('/').split('/')
+            if len(path_segments) < 2 and '-' not in path_segments[-1]:
+                logging.info(f"Skipping non-article-like link: {clean_url}")
                 continue
-            
+
             processed_urls.add(clean_url)
 
             logging.info(f"Processing link: {clean_url}")
             try:
-                page_content = None
-                # Reuse selenium driver if it's already running
-                if is_dynamic and driver:
-                    driver.get(clean_url)
-                    time.sleep(5)
-                    page_content = driver.page_source
-                else:
-                    # Fallback to cloudscraper for non-dynamic sites or if driver isn't running
-                    scraper = cloudscraper.create_scraper()
-                    page_content = scraper.get(clean_url, timeout=15).text
+                # Use cloudscraper for speed when processing individual links
+                page_content = scraper.get(clean_url, timeout=15).text
                 
                 content = trafilatura.extract(page_content)
 
-                if content and len(content) > 200: # Lowered threshold
+                if content and len(content) > 200:
                     logging.info(f"Found article: {clean_url} | Length: {len(content)}")
                     title_soup = BeautifulSoup(page_content, 'html.parser')
                     title = title_soup.title.string if title_soup.title else "No Title Found"
@@ -151,10 +145,26 @@ def scrape_url(url):
             except Exception as e:
                 logging.error(f"Could not process link {clean_url}. Reason: {e}")
         
+        # Fallback to scrape the main page if no articles were found from links
+        if not items:
+            logging.info("No articles found in links, trying the main URL itself.")
+            content = trafilatura.extract(page_source)
+            if content and len(content) > 200:
+                soup = BeautifulSoup(page_source, 'html.parser')
+                title = soup.title.string if soup.title else "No Title Found"
+                items.append({
+                    "title": title,
+                    "content": md(content, heading_style="ATX"),
+                    "content_type": "blog",
+                    "source_url": url,
+                    "author": "",
+                    "user_id": ""
+                })
+
     except Exception as e:
         logging.error(f"Could not scrape {url}. Reason: {e}")
     finally:
-        if driver:
+        if driver: # Ensure driver is always quit even if errors occur
             driver.quit()
 
     # Remove duplicates
@@ -190,7 +200,7 @@ def scrape_pdf(file_path):
 def main():
     """Main function to run the scraper."""
     parser = argparse.ArgumentParser(description="Scrape content from websites and PDFs into a knowledgebase format.")
-    parser.add_argument("source", help="The URL of the website or path to the PDF file.")
+    parser.add_argument("source", help="The URL of the website, path to a PDF file, or path to a CSV file of sources.")
     parser.add_argument("--team_id", default="aline123", help="The team ID for the knowledgebase.")
     parser.add_argument("-o", "--output", default="output.json", help="The name of the output JSON file.")
     
@@ -200,14 +210,25 @@ def main():
     output_file = args.output
 
     all_items = []
+    sources_to_scrape = []
 
-    if source.startswith('http://') or source.startswith('https://'):
-        all_items.extend(scrape_url(source))
-    elif os.path.isfile(source) and source.lower().endswith('.pdf'):
-        all_items.extend(scrape_pdf(source))
+    if source.lower().endswith('.csv'):
+        print(f"Reading sources from {source}")
+        with open(source, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                sources_to_scrape.append(row['url'])
     else:
-        print("Unsupported source. Please provide a valid URL or a path to a PDF file.")
-        return
+        sources_to_scrape.append(source)
+    
+    for s in sources_to_scrape:
+        print(f"Scraping {s}...")
+        if s.startswith('http://') or s.startswith('https://'):
+            all_items.extend(scrape_url(s))
+        elif os.path.isfile(s) and s.lower().endswith('.pdf'):
+            all_items.extend(scrape_pdf(s))
+        else:
+            print(f"Unsupported source type for {s}. Skipping.")
 
     output = {
         "team_id": team_id,

@@ -1,0 +1,960 @@
+2025-06-17 23:38:01,192 - INFO - Trying to find sitemap at: https://interviewing.io/sitemap.xml
+2025-06-17 23:38:01,424 - INFO - Could not find or process sitemap.xml. Reason: 404 Client Error: Not Found for url: https://interviewing.io/sitemap.xml
+2025-06-17 23:38:01,424 - INFO - Sitemap not found or empty, falling back to dynamic scraping for link discovery.
+2025-06-17 23:38:01,424 - INFO - ====== WebDriver manager ======
+2025-06-17 23:38:02,183 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-17 23:38:02,245 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-17 23:38:02,294 - INFO - Driver [C:\Users\caleb\.wdm\drivers\chromedriver\win64\137.0.7151.119\chromedriver-win32/chromedriver.exe] found in cache
+2025-06-17 23:38:12,931 - INFO - Skipping non-article-like link: https://interviewing.io/
+2025-06-17 23:38:12,931 - INFO - Skipping non-article-like link: https://interviewing.io/employers
+2025-06-17 23:38:12,931 - INFO - Processing link: https://interviewing.io/gift-practice-interviews
+2025-06-17 23:38:13,172 - INFO - Found article: https://interviewing.io/gift-practice-interviews | Length: 648
+2025-06-17 23:38:13,183 - INFO - Skipping non-article-like link: https://interviewing.io/faq
+2025-06-17 23:38:13,183 - INFO - Skipping non-article-like link: https://interviewing.io/signup
+2025-06-17 23:38:13,183 - INFO - Processing link: https://interviewing.io/blog/stop-trying-to-make-recruiters-think-or-why-your-resume-is-bad-and-how-to-fix-it
+2025-06-17 23:38:13,244 - INFO - Found article: https://interviewing.io/blog/stop-trying-to-make-recruiters-think-or-why-your-resume-is-bad-and-how-to-fix-it | Length: 7313
+2025-06-17 23:38:13,253 - INFO - Processing link: https://interviewing.io/blog/why-resume-writing-is-snake-oil
+2025-06-17 23:38:13,316 - INFO - Found article: https://interviewing.io/blog/why-resume-writing-is-snake-oil | Length: 8844
+2025-06-17 23:38:13,332 - INFO - Processing link: https://interviewing.io/blog/its-ok-to-postpone-your-interviews-if-youre-not-ready
+2025-06-17 23:38:13,396 - INFO - Found article: https://interviewing.io/blog/its-ok-to-postpone-your-interviews-if-youre-not-ready | Length: 7254
+2025-06-17 23:38:13,403 - INFO - Processing link: https://interviewing.io/blog/nine-free-chapters-of-beyond-cracking-the-coding-interview
+2025-06-17 23:38:13,466 - INFO - Found article: https://interviewing.io/blog/nine-free-chapters-of-beyond-cracking-the-coding-interview | Length: 443
+2025-06-17 23:38:13,474 - INFO - Processing link: https://interviewing.io/blog/we-co-wrote-the-official-sequel-to-cracking-the-coding-interview-introducing-beyond-ctci
+2025-06-17 23:38:13,528 - INFO - Found article: https://interviewing.io/blog/we-co-wrote-the-official-sequel-to-cracking-the-coding-interview-introducing-beyond-ctci | Length: 2918
+2025-06-17 23:38:13,534 - INFO - Processing link: https://interviewing.io/blog/i-love-meritocracy-but-all-the-recent-anti-dei-rhetoric-is-bad
+2025-06-17 23:38:13,619 - INFO - Found article: https://interviewing.io/blog/i-love-meritocracy-but-all-the-recent-anti-dei-rhetoric-is-bad | Length: 31339
+2025-06-17 23:38:13,632 - INFO - Processing link: https://interviewing.io/blog/how-well-do-leetcode-ratings-predict-interview-performance
+2025-06-17 23:38:13,701 - INFO - Found article: https://interviewing.io/blog/how-well-do-leetcode-ratings-predict-interview-performance | Length: 11355
+2025-06-17 23:38:13,711 - INFO - Processing link: https://interviewing.io/blog/how-to-get-in-the-door-at-top-companies-cold-out-reach-to-hiring-managers-part-2
+2025-06-17 23:38:13,799 - INFO - Found article: https://interviewing.io/blog/how-to-get-in-the-door-at-top-companies-cold-out-reach-to-hiring-managers-part-2 | Length: 16747
+2025-06-17 23:38:13,809 - INFO - Processing link: https://interviewing.io/blog/how-to-get-in-the-door-at-top-companies-part-1
+2025-06-17 23:38:13,880 - INFO - Found article: https://interviewing.io/blog/how-to-get-in-the-door-at-top-companies-part-1 | Length: 21780
+2025-06-17 23:38:13,891 - INFO - Processing link: https://interviewing.io/blog/why-engineers-dont-like-take-homes-and-how-companies-can-fix-them
+2025-06-17 23:38:13,971 - INFO - Found article: https://interviewing.io/blog/why-engineers-dont-like-take-homes-and-how-companies-can-fix-them | Length: 25804
+2025-06-17 23:38:13,984 - INFO - Skipping non-article-like link: https://interviewing.io/signup
+2025-06-17 23:38:13,984 - INFO - Processing link: https://interviewing.io/blog/are-recruiters-better-than-a-coin-flip-at-judging-resumes
+2025-06-17 23:38:14,059 - INFO - Found article: https://interviewing.io/blog/are-recruiters-better-than-a-coin-flip-at-judging-resumes | Length: 21492
+2025-06-17 23:38:14,070 - INFO - Processing link: https://interviewing.io/blog/how-to-negotiate-with-meta
+2025-06-17 23:38:14,154 - INFO - Found article: https://interviewing.io/blog/how-to-negotiate-with-meta | Length: 21345
+2025-06-17 23:38:14,165 - INFO - Processing link: https://interviewing.io/blog/how-hard-is-it-to-cheat-with-chatgpt-in-technical-interviews
+2025-06-17 23:38:14,260 - INFO - Found article: https://interviewing.io/blog/how-hard-is-it-to-cheat-with-chatgpt-in-technical-interviews | Length: 21359
+2025-06-17 23:38:14,275 - INFO - Processing link: https://interviewing.io/blog/negotiate-salary-recruiter
+2025-06-17 23:38:14,337 - INFO - Found article: https://interviewing.io/blog/negotiate-salary-recruiter | Length: 14735
+2025-06-17 23:38:14,344 - INFO - Processing link: https://interviewing.io/blog/category/recession
+2025-06-17 23:38:14,398 - INFO - Found article: https://interviewing.io/blog/category/recession | Length: 3552
+2025-06-17 23:38:14,404 - INFO - Processing link: https://interviewing.io/blog/category/salary-negotiation
+2025-06-17 23:38:14,450 - INFO - Found article: https://interviewing.io/blog/category/salary-negotiation | Length: 1929
+2025-06-17 23:38:14,457 - INFO - Processing link: https://interviewing.io/blog/category/company-news
+2025-06-17 23:38:14,511 - INFO - Found article: https://interviewing.io/blog/category/company-news | Length: 4391
+2025-06-17 23:38:14,517 - INFO - Processing link: https://interviewing.io/blog/category/data-deep-dives
+2025-06-17 23:38:14,609 - INFO - Found article: https://interviewing.io/blog/category/data-deep-dives | Length: 20441
+2025-06-17 23:38:14,621 - INFO - Processing link: https://interviewing.io/blog/category/diversity
+2025-06-17 23:38:14,672 - INFO - Found article: https://interviewing.io/blog/category/diversity | Length: 8131
+2025-06-17 23:38:14,678 - INFO - Processing link: https://interviewing.io/blog/category/guest-posts
+2025-06-17 23:38:14,805 - INFO - Found article: https://interviewing.io/blog/category/guest-posts | Length: 5994
+2025-06-17 23:38:14,813 - INFO - Processing link: https://interviewing.io/blog/category/hiring-is-broken
+2025-06-17 23:38:14,877 - INFO - Found article: https://interviewing.io/blog/category/hiring-is-broken | Length: 10499
+2025-06-17 23:38:14,886 - INFO - Processing link: https://interviewing.io/blog/category/interview-tips
+2025-06-17 23:38:14,941 - INFO - Found article: https://interviewing.io/blog/category/interview-tips | Length: 6465
+2025-06-17 23:38:14,950 - INFO - Processing link: https://interviewing.io/blog/category/for-employers-how-to-hire-better
+2025-06-17 23:38:15,008 - INFO - Found article: https://interviewing.io/blog/category/for-employers-how-to-hire-better | Length: 11894
+2025-06-17 23:38:15,016 - INFO - Processing link: https://interviewing.io/blog/page/2
+2025-06-17 23:38:15,074 - INFO - Found article: https://interviewing.io/blog/page/2 | Length: 4937
+2025-06-17 23:38:15,081 - INFO - Processing link: https://interviewing.io/blog/page/3
+2025-06-17 23:38:15,132 - INFO - Found article: https://interviewing.io/blog/page/3 | Length: 6013
+2025-06-17 23:38:15,141 - INFO - Processing link: https://interviewing.io/blog/page/4
+2025-06-17 23:38:15,192 - INFO - Found article: https://interviewing.io/blog/page/4 | Length: 6068
+2025-06-17 23:38:15,199 - INFO - Processing link: https://interviewing.io/blog/page/5
+2025-06-17 23:38:15,258 - INFO - Found article: https://interviewing.io/blog/page/5 | Length: 6175
+2025-06-17 23:38:15,265 - INFO - Processing link: https://interviewing.io/blog/page/8
+2025-06-17 23:38:15,309 - INFO - Found article: https://interviewing.io/blog/page/8 | Length: 1431
+2025-06-17 23:38:15,314 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:15,314 - INFO - Processing link: https://interviewing.io/mocks/google-system-design-distributed-databases
+2025-06-17 23:38:15,412 - INFO - Found article: https://interviewing.io/mocks/google-system-design-distributed-databases | Length: 37329
+2025-06-17 23:38:15,425 - INFO - Processing link: https://interviewing.io/mocks/google-java-order-statistic-of-an-unsorted-array
+2025-06-17 23:38:15,662 - INFO - Found article: https://interviewing.io/mocks/google-java-order-statistic-of-an-unsorted-array | Length: 33821
+2025-06-17 23:38:15,741 - INFO - Processing link: https://interviewing.io/mocks/linked-in-java-reverse-word-in-string
+2025-06-17 23:38:15,858 - INFO - Found article: https://interviewing.io/mocks/linked-in-java-reverse-word-in-string | Length: 15707
+2025-06-17 23:38:15,876 - INFO - Processing link: https://interviewing.io/mocks/airbnb-python-missing-item-list-difference
+2025-06-17 23:38:15,981 - INFO - Found article: https://interviewing.io/mocks/airbnb-python-missing-item-list-difference | Length: 17032
+2025-06-17 23:38:15,997 - INFO - Processing link: https://interviewing.io/mocks/microsoft-go-vertex-distance-order-statistic
+2025-06-17 23:38:16,140 - INFO - Found article: https://interviewing.io/mocks/microsoft-go-vertex-distance-order-statistic | Length: 19394
+2025-06-17 23:38:16,162 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:38:16,163 - INFO - Processing link: https://interviewing.io/java-interview-questions
+2025-06-17 23:38:16,279 - INFO - Found article: https://interviewing.io/java-interview-questions | Length: 14607
+2025-06-17 23:38:16,297 - INFO - Processing link: https://interviewing.io/python-interview-questions
+2025-06-17 23:38:16,407 - INFO - Found article: https://interviewing.io/python-interview-questions | Length: 7396
+2025-06-17 23:38:16,426 - INFO - Processing link: https://interviewing.io/javascript-interview-questions
+2025-06-17 23:38:16,622 - INFO - Found article: https://interviewing.io/javascript-interview-questions | Length: 23976
+2025-06-17 23:38:16,664 - INFO - Processing link: https://interviewing.io/guides/hiring-process/amazon
+2025-06-17 23:38:16,779 - INFO - Found article: https://interviewing.io/guides/hiring-process/amazon | Length: 14488
+2025-06-17 23:38:16,797 - INFO - Processing link: https://interviewing.io/guides/hiring-process/google
+2025-06-17 23:38:16,928 - INFO - Found article: https://interviewing.io/guides/hiring-process/google | Length: 17580
+2025-06-17 23:38:16,947 - INFO - Processing link: https://interviewing.io/guides/hiring-process/meta-facebook
+2025-06-17 23:38:17,084 - INFO - Found article: https://interviewing.io/guides/hiring-process/meta-facebook | Length: 14815
+2025-06-17 23:38:17,104 - INFO - Processing link: https://interviewing.io/guides/hiring-process/apple
+2025-06-17 23:38:17,210 - INFO - Found article: https://interviewing.io/guides/hiring-process/apple | Length: 21517
+2025-06-17 23:38:17,227 - INFO - Processing link: https://interviewing.io/guides/hiring-process/netflix
+2025-06-17 23:38:17,319 - INFO - Found article: https://interviewing.io/guides/hiring-process/netflix | Length: 12374
+2025-06-17 23:38:17,332 - INFO - Processing link: https://interviewing.io/guides/hiring-process/microsoft
+2025-06-17 23:38:17,438 - INFO - Found article: https://interviewing.io/guides/hiring-process/microsoft | Length: 8781
+2025-06-17 23:38:17,455 - INFO - Skipping non-article-like link: https://interviewing.io/questions
+2025-06-17 23:38:17,455 - INFO - Processing link: https://interviewing.io/questions/reverse-string
+2025-06-17 23:38:17,559 - INFO - Found article: https://interviewing.io/questions/reverse-string | Length: 15729
+2025-06-17 23:38:17,651 - INFO - Processing link: https://interviewing.io/questions/longest-substring-without-repeating-characters
+2025-06-17 23:38:17,751 - INFO - Found article: https://interviewing.io/questions/longest-substring-without-repeating-characters | Length: 13482
+2025-06-17 23:38:17,770 - INFO - Processing link: https://interviewing.io/questions/longest-common-subsequence
+2025-06-17 23:38:17,895 - INFO - Found article: https://interviewing.io/questions/longest-common-subsequence | Length: 15714
+2025-06-17 23:38:17,920 - INFO - Processing link: https://interviewing.io/questions/container-with-most-water
+2025-06-17 23:38:17,999 - INFO - Found article: https://interviewing.io/questions/container-with-most-water | Length: 5720
+2025-06-17 23:38:18,010 - INFO - Processing link: https://interviewing.io/questions/reverse-linked-list
+2025-06-17 23:38:18,092 - INFO - Found article: https://interviewing.io/questions/reverse-linked-list | Length: 8633
+2025-06-17 23:38:18,105 - INFO - Processing link: https://interviewing.io/questions/k-closest-points-to-origin
+2025-06-17 23:38:18,203 - INFO - Found article: https://interviewing.io/questions/k-closest-points-to-origin | Length: 10932
+2025-06-17 23:38:18,218 - INFO - Processing link: https://interviewing.io/questions/kth-smallest-element
+2025-06-17 23:38:18,317 - INFO - Found article: https://interviewing.io/questions/kth-smallest-element | Length: 9354
+2025-06-17 23:38:18,334 - INFO - Processing link: https://interviewing.io/questions/reverse-words-in-a-string
+2025-06-17 23:38:18,439 - INFO - Found article: https://interviewing.io/questions/reverse-words-in-a-string | Length: 8870
+2025-06-17 23:38:18,463 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:38:18,463 - INFO - Processing link: https://interviewing.io/guides/amazon-leadership-principles
+2025-06-17 23:38:18,616 - INFO - Found article: https://interviewing.io/guides/amazon-leadership-principles | Length: 12297
+2025-06-17 23:38:18,641 - INFO - Processing link: https://interviewing.io/guides/system-design-interview
+2025-06-17 23:38:18,748 - INFO - Found article: https://interviewing.io/guides/system-design-interview | Length: 25125
+2025-06-17 23:38:18,766 - INFO - Processing link: https://interviewing.io/guides/hiring-process
+2025-06-17 23:38:18,834 - INFO - Found article: https://interviewing.io/guides/hiring-process | Length: 17663
+2025-06-17 23:38:18,846 - INFO - Skipping non-article-like link: https://interviewing.io/
+2025-06-17 23:38:18,846 - INFO - Skipping non-article-like link: https://interviewing.io/employers
+2025-06-17 23:38:18,846 - INFO - Skipping non-article-like link: https://interviewing.io/employers
+2025-06-17 23:38:18,846 - INFO - Skipping non-article-like link: https://interviewing.io/faq
+2025-06-17 23:38:18,846 - INFO - Processing link: https://interviewing.io/.well-known/security.txt
+2025-06-17 23:38:18,877 - ERROR - parsed tree length: 0, wrong data type or not valid HTML
+2025-06-17 23:38:18,877 - ERROR - empty HTML tree: None
+2025-06-17 23:38:18,877 - WARNING - discarding data: None
+2025-06-17 23:38:18,877 - INFO - Skipping non-article-like link: https://interviewing.io/privacy
+2025-06-17 23:38:18,878 - INFO - Skipping non-article-like link: https://interviewing.io/terms
+2025-06-17 23:38:18,878 - INFO - Trying to find sitemap at: https://interviewing.io/sitemap.xml
+2025-06-17 23:38:19,079 - INFO - Could not find or process sitemap.xml. Reason: 404 Client Error: Not Found for url: https://interviewing.io/sitemap.xml
+2025-06-17 23:38:19,079 - INFO - Sitemap not found or empty, falling back to dynamic scraping for link discovery.
+2025-06-17 23:38:19,079 - INFO - ====== WebDriver manager ======
+2025-06-17 23:38:20,042 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-17 23:38:20,101 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-17 23:38:20,158 - INFO - Driver [C:\Users\caleb\.wdm\drivers\chromedriver\win64\137.0.7151.119\chromedriver-win32/chromedriver.exe] found in cache
+2025-06-17 23:38:31,911 - INFO - Skipping non-article-like link: https://interviewing.io/
+2025-06-17 23:38:31,911 - INFO - Skipping non-article-like link: https://interviewing.io/employers
+2025-06-17 23:38:31,911 - INFO - Processing link: https://interviewing.io/gift-practice-interviews
+2025-06-17 23:38:32,026 - INFO - Found article: https://interviewing.io/gift-practice-interviews | Length: 648
+2025-06-17 23:38:32,030 - INFO - Skipping non-article-like link: https://interviewing.io/blog
+2025-06-17 23:38:32,030 - INFO - Skipping non-article-like link: https://interviewing.io/faq
+2025-06-17 23:38:32,030 - INFO - Skipping non-article-like link: https://interviewing.io/signup
+2025-06-17 23:38:32,030 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:38:32,030 - INFO - Skipping non-article-like link: https://interviewing.io/topics
+2025-06-17 23:38:32,030 - INFO - Skipping non-article-like link: https://interviewing.io/topics
+2025-06-17 23:38:32,030 - INFO - Skipping non-article-like link: https://interviewing.io/topics
+2025-06-17 23:38:32,031 - INFO - Skipping non-article-like link: https://interviewing.io/topics
+2025-06-17 23:38:32,031 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:32,031 - INFO - Skipping non-article-like link: https://interviewing.io/signup
+2025-06-17 23:38:32,031 - INFO - Processing link: https://interviewing.io/guides/hiring-process/google
+2025-06-17 23:38:32,182 - INFO - Found article: https://interviewing.io/guides/hiring-process/google | Length: 17580
+2025-06-17 23:38:32,203 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:32,203 - INFO - Processing link: https://interviewing.io/guides/hiring-process/meta-facebook
+2025-06-17 23:38:32,336 - INFO - Found article: https://interviewing.io/guides/hiring-process/meta-facebook | Length: 14815
+2025-06-17 23:38:32,354 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:32,354 - INFO - Processing link: https://interviewing.io/guides/hiring-process/amazon
+2025-06-17 23:38:32,478 - INFO - Found article: https://interviewing.io/guides/hiring-process/amazon | Length: 14488
+2025-06-17 23:38:32,496 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:32,496 - INFO - Processing link: https://interviewing.io/guides/hiring-process/microsoft
+2025-06-17 23:38:32,607 - INFO - Found article: https://interviewing.io/guides/hiring-process/microsoft | Length: 8781
+2025-06-17 23:38:32,741 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:32,741 - INFO - Processing link: https://interviewing.io/guides/hiring-process/netflix
+2025-06-17 23:38:32,831 - INFO - Found article: https://interviewing.io/guides/hiring-process/netflix | Length: 12374
+2025-06-17 23:38:32,845 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:32,845 - INFO - Processing link: https://interviewing.io/guides/hiring-process/apple
+2025-06-17 23:38:32,958 - INFO - Found article: https://interviewing.io/guides/hiring-process/apple | Length: 21517
+2025-06-17 23:38:32,976 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:32,976 - INFO - Processing link: https://interviewing.io/affirm-interview-questions
+2025-06-17 23:38:33,034 - INFO - Found article: https://interviewing.io/affirm-interview-questions | Length: 4495
+2025-06-17 23:38:33,043 - INFO - Processing link: https://interviewing.io/airbnb-interview-questions
+2025-06-17 23:38:33,119 - INFO - Found article: https://interviewing.io/airbnb-interview-questions | Length: 5021
+2025-06-17 23:38:33,130 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:33,130 - INFO - Processing link: https://interviewing.io/anduril-interview-questions
+2025-06-17 23:38:33,188 - INFO - Found article: https://interviewing.io/anduril-interview-questions | Length: 6870
+2025-06-17 23:38:33,197 - INFO - Processing link: https://interviewing.io/anthropic-interview-questions
+2025-06-17 23:38:33,248 - INFO - Found article: https://interviewing.io/anthropic-interview-questions | Length: 6693
+2025-06-17 23:38:33,256 - INFO - Processing link: https://interviewing.io/atlassian-interview-questions
+2025-06-17 23:38:33,343 - INFO - Found article: https://interviewing.io/atlassian-interview-questions | Length: 7414
+2025-06-17 23:38:33,351 - INFO - Processing link: https://interviewing.io/block-interview-questions
+2025-06-17 23:38:33,409 - INFO - Found article: https://interviewing.io/block-interview-questions | Length: 5580
+2025-06-17 23:38:33,420 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:33,420 - INFO - Processing link: https://interviewing.io/bloomberg-interview-questions
+2025-06-17 23:38:33,488 - INFO - Found article: https://interviewing.io/bloomberg-interview-questions | Length: 6464
+2025-06-17 23:38:33,496 - INFO - Processing link: https://interviewing.io/capital-one-interview-questions
+2025-06-17 23:38:33,557 - INFO - Found article: https://interviewing.io/capital-one-interview-questions | Length: 5498
+2025-06-17 23:38:33,567 - INFO - Processing link: https://interviewing.io/coinbase-interview-questions
+2025-06-17 23:38:33,839 - INFO - Found article: https://interviewing.io/coinbase-interview-questions | Length: 4878
+2025-06-17 23:38:33,848 - INFO - Processing link: https://interviewing.io/databricks-interview-questions
+2025-06-17 23:38:33,917 - INFO - Found article: https://interviewing.io/databricks-interview-questions | Length: 9137
+2025-06-17 23:38:33,926 - INFO - Processing link: https://interviewing.io/datadog-interview-questions
+2025-06-17 23:38:33,984 - INFO - Found article: https://interviewing.io/datadog-interview-questions | Length: 6172
+2025-06-17 23:38:33,993 - INFO - Processing link: https://interviewing.io/doordash-interview-questions
+2025-06-17 23:38:34,054 - INFO - Found article: https://interviewing.io/doordash-interview-questions | Length: 5829
+2025-06-17 23:38:34,064 - INFO - Processing link: https://interviewing.io/figma-interview-questions
+2025-06-17 23:38:34,129 - INFO - Found article: https://interviewing.io/figma-interview-questions | Length: 7523
+2025-06-17 23:38:34,139 - INFO - Processing link: https://interviewing.io/fireeye-interview-questions
+2025-06-17 23:38:34,184 - INFO - Found article: https://interviewing.io/fireeye-interview-questions | Length: 750
+2025-06-17 23:38:34,190 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:34,190 - INFO - Processing link: https://interviewing.io/grammarly-interview-questions
+2025-06-17 23:38:34,250 - INFO - Found article: https://interviewing.io/grammarly-interview-questions | Length: 7573
+2025-06-17 23:38:34,262 - INFO - Processing link: https://interviewing.io/hubspot-interview-questions
+2025-06-17 23:38:34,329 - INFO - Found article: https://interviewing.io/hubspot-interview-questions | Length: 7995
+2025-06-17 23:38:34,339 - INFO - Processing link: https://interviewing.io/instacart-interview-questions
+2025-06-17 23:38:34,396 - INFO - Found article: https://interviewing.io/instacart-interview-questions | Length: 5512
+2025-06-17 23:38:34,406 - INFO - Processing link: https://interviewing.io/interviewingio-interview-questions
+2025-06-17 23:38:34,447 - INFO - Found article: https://interviewing.io/interviewingio-interview-questions | Length: 820
+2025-06-17 23:38:34,454 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:34,454 - INFO - Processing link: https://interviewing.io/jane-street-interview-questions
+2025-06-17 23:38:34,516 - INFO - Found article: https://interviewing.io/jane-street-interview-questions | Length: 4295
+2025-06-17 23:38:34,526 - INFO - Processing link: https://interviewing.io/jpmorgan-interview-questions
+2025-06-17 23:38:34,565 - INFO - Found article: https://interviewing.io/jpmorgan-interview-questions | Length: 728
+2025-06-17 23:38:34,571 - INFO - Processing link: https://interviewing.io/linkedin-interview-questions
+2025-06-17 23:38:34,645 - INFO - Found article: https://interviewing.io/linkedin-interview-questions | Length: 8120
+2025-06-17 23:38:34,657 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:34,657 - INFO - Processing link: https://interviewing.io/mathworks-interview-questions
+2025-06-17 23:38:34,700 - INFO - Found article: https://interviewing.io/mathworks-interview-questions | Length: 719
+2025-06-17 23:38:34,708 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:34,708 - INFO - Processing link: https://interviewing.io/morgan-stanley-interview-questions
+2025-06-17 23:38:34,772 - INFO - Found article: https://interviewing.io/morgan-stanley-interview-questions | Length: 6083
+2025-06-17 23:38:34,781 - INFO - Processing link: https://interviewing.io/nvidia-interview-questions
+2025-06-17 23:38:34,838 - INFO - Found article: https://interviewing.io/nvidia-interview-questions | Length: 7888
+2025-06-17 23:38:34,847 - INFO - Processing link: https://interviewing.io/openai-interview-questions
+2025-06-17 23:38:34,905 - INFO - Found article: https://interviewing.io/openai-interview-questions | Length: 9814
+2025-06-17 23:38:34,915 - INFO - Processing link: https://interviewing.io/palantir-interview-questions
+2025-06-17 23:38:34,979 - INFO - Found article: https://interviewing.io/palantir-interview-questions | Length: 10454
+2025-06-17 23:38:34,991 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:34,991 - INFO - Processing link: https://interviewing.io/pivotal-labs-interview-questions
+2025-06-17 23:38:35,026 - INFO - Found article: https://interviewing.io/pivotal-labs-interview-questions | Length: 731
+2025-06-17 23:38:35,032 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:35,032 - INFO - Processing link: https://interviewing.io/rippling-interview-questions
+2025-06-17 23:38:35,087 - INFO - Found article: https://interviewing.io/rippling-interview-questions | Length: 5412
+2025-06-17 23:38:35,095 - INFO - Processing link: https://interviewing.io/robinhood-interview-questions
+2025-06-17 23:38:35,170 - INFO - Found article: https://interviewing.io/robinhood-interview-questions | Length: 5193
+2025-06-17 23:38:35,179 - INFO - Processing link: https://interviewing.io/roblox-interview-questions
+2025-06-17 23:38:35,243 - INFO - Found article: https://interviewing.io/roblox-interview-questions | Length: 6826
+2025-06-17 23:38:35,251 - INFO - Processing link: https://interviewing.io/salesforce-interview-questions
+2025-06-17 23:38:35,309 - INFO - Found article: https://interviewing.io/salesforce-interview-questions | Length: 6096
+2025-06-17 23:38:35,318 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:35,318 - INFO - Processing link: https://interviewing.io/samsung-interview-questions
+2025-06-17 23:38:35,360 - INFO - Found article: https://interviewing.io/samsung-interview-questions | Length: 712
+2025-06-17 23:38:35,527 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:35,527 - INFO - Processing link: https://interviewing.io/shopify-interview-questions
+2025-06-17 23:38:35,585 - INFO - Found article: https://interviewing.io/shopify-interview-questions | Length: 6398
+2025-06-17 23:38:35,595 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:35,595 - INFO - Processing link: https://interviewing.io/slack-interview-questions
+2025-06-17 23:38:35,638 - INFO - Found article: https://interviewing.io/slack-interview-questions | Length: 704
+2025-06-17 23:38:35,644 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:35,644 - INFO - Processing link: https://interviewing.io/snap-interview-questions
+2025-06-17 23:38:35,708 - INFO - Found article: https://interviewing.io/snap-interview-questions | Length: 5054
+2025-06-17 23:38:35,717 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:35,717 - INFO - Processing link: https://interviewing.io/snowflake-interview-questions
+2025-06-17 23:38:35,777 - INFO - Found article: https://interviewing.io/snowflake-interview-questions | Length: 6717
+2025-06-17 23:38:35,787 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:35,787 - INFO - Processing link: https://interviewing.io/spacex-interview-questions
+2025-06-17 23:38:35,847 - INFO - Found article: https://interviewing.io/spacex-interview-questions | Length: 8012
+2025-06-17 23:38:35,857 - INFO - Processing link: https://interviewing.io/spotify-interview-questions
+2025-06-17 23:38:35,916 - INFO - Found article: https://interviewing.io/spotify-interview-questions | Length: 6772
+2025-06-17 23:38:35,925 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:35,925 - INFO - Processing link: https://interviewing.io/stripe-interview-questions
+2025-06-17 23:38:35,982 - INFO - Found article: https://interviewing.io/stripe-interview-questions | Length: 9174
+2025-06-17 23:38:35,993 - INFO - Processing link: https://interviewing.io/tiktok-interview-questions
+2025-06-17 23:38:36,057 - INFO - Found article: https://interviewing.io/tiktok-interview-questions | Length: 7298
+2025-06-17 23:38:36,066 - INFO - Processing link: https://interviewing.io/uber-interview-questions
+2025-06-17 23:38:36,131 - INFO - Found article: https://interviewing.io/uber-interview-questions | Length: 10314
+2025-06-17 23:38:36,142 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:36,142 - INFO - Processing link: https://interviewing.io/vmware-interview-questions
+2025-06-17 23:38:36,356 - INFO - Found article: https://interviewing.io/vmware-interview-questions | Length: 6130
+2025-06-17 23:38:36,366 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:36,366 - INFO - Processing link: https://interviewing.io/walmart-interview-questions
+2025-06-17 23:38:36,407 - INFO - Found article: https://interviewing.io/walmart-interview-questions | Length: 750
+2025-06-17 23:38:36,412 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:36,412 - INFO - Processing link: https://interviewing.io/wurlinc-interview-questions
+2025-06-17 23:38:36,456 - INFO - Found article: https://interviewing.io/wurlinc-interview-questions | Length: 700
+2025-06-17 23:38:36,461 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:36,461 - INFO - Processing link: https://interviewing.io/javascript-interview-questions
+2025-06-17 23:38:36,673 - INFO - Found article: https://interviewing.io/javascript-interview-questions | Length: 23976
+2025-06-17 23:38:36,717 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:36,717 - INFO - Processing link: https://interviewing.io/python-interview-questions
+2025-06-17 23:38:36,841 - INFO - Found article: https://interviewing.io/python-interview-questions | Length: 7396
+2025-06-17 23:38:36,860 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:36,860 - INFO - Processing link: https://interviewing.io/java-interview-questions
+2025-06-17 23:38:36,969 - INFO - Found article: https://interviewing.io/java-interview-questions | Length: 14607
+2025-06-17 23:38:36,988 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:36,989 - INFO - Processing link: https://interviewing.io/cplusplus-interview-questions
+2025-06-17 23:38:37,339 - INFO - Found article: https://interviewing.io/cplusplus-interview-questions | Length: 9279
+2025-06-17 23:38:37,355 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:37,355 - INFO - Processing link: https://interviewing.io/csharp-interview-questions
+2025-06-17 23:38:37,477 - INFO - Found article: https://interviewing.io/csharp-interview-questions | Length: 9033
+2025-06-17 23:38:37,502 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:37,502 - INFO - Processing link: https://interviewing.io/go-interview-questions
+2025-06-17 23:38:37,596 - INFO - Found article: https://interviewing.io/go-interview-questions | Length: 9865
+2025-06-17 23:38:37,611 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:37,611 - INFO - Processing link: https://interviewing.io/ruby-interview-questions
+2025-06-17 23:38:37,792 - INFO - Found article: https://interviewing.io/ruby-interview-questions | Length: 19747
+2025-06-17 23:38:37,828 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:37,828 - INFO - Processing link: https://interviewing.io/rust-interview-questions
+2025-06-17 23:38:38,083 - INFO - Found article: https://interviewing.io/rust-interview-questions | Length: 7566
+2025-06-17 23:38:38,094 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:38,094 - INFO - Processing link: https://interviewing.io/swift-interview-questions
+2025-06-17 23:38:38,291 - INFO - Found article: https://interviewing.io/swift-interview-questions | Length: 1014
+2025-06-17 23:38:38,297 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:38,297 - INFO - Processing link: https://interviewing.io/system-design-interview-questions
+2025-06-17 23:38:38,394 - INFO - Found article: https://interviewing.io/system-design-interview-questions | Length: 1815
+2025-06-17 23:38:38,410 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:38,411 - INFO - Processing link: https://interviewing.io/sorting-interview-questions
+2025-06-17 23:38:38,623 - INFO - Found article: https://interviewing.io/sorting-interview-questions | Length: 41438
+2025-06-17 23:38:38,862 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:38,862 - INFO - Processing link: https://interviewing.io/dynamic-programming-interview-questions
+2025-06-17 23:38:38,961 - INFO - Found article: https://interviewing.io/dynamic-programming-interview-questions | Length: 13941
+2025-06-17 23:38:38,978 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:38,978 - INFO - Processing link: https://interviewing.io/linked-lists-interview-questions
+2025-06-17 23:38:39,274 - INFO - Found article: https://interviewing.io/linked-lists-interview-questions | Length: 31845
+2025-06-17 23:38:39,323 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:39,323 - INFO - Processing link: https://interviewing.io/arrays-interview-questions
+2025-06-17 23:38:39,595 - INFO - Found article: https://interviewing.io/arrays-interview-questions | Length: 32124
+2025-06-17 23:38:39,644 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:39,644 - INFO - Processing link: https://interviewing.io/binary-search-interview-questions
+2025-06-17 23:38:39,840 - INFO - Found article: https://interviewing.io/binary-search-interview-questions | Length: 27246
+2025-06-17 23:38:39,873 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:39,874 - INFO - Processing link: https://interviewing.io/binary-trees-interview-questions
+2025-06-17 23:38:40,024 - INFO - Found article: https://interviewing.io/binary-trees-interview-questions | Length: 21292
+2025-06-17 23:38:40,052 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:40,052 - INFO - Processing link: https://interviewing.io/breadth-first-search-interview-questions
+2025-06-17 23:38:40,173 - INFO - Found article: https://interviewing.io/breadth-first-search-interview-questions | Length: 10701
+2025-06-17 23:38:40,191 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:40,191 - INFO - Processing link: https://interviewing.io/buckets-interview-questions
+2025-06-17 23:38:40,241 - INFO - Found article: https://interviewing.io/buckets-interview-questions | Length: 280
+2025-06-17 23:38:40,248 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:40,248 - INFO - Processing link: https://interviewing.io/depth-first-search-interview-questions
+2025-06-17 23:38:40,354 - INFO - Found article: https://interviewing.io/depth-first-search-interview-questions | Length: 13254
+2025-06-17 23:38:40,374 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:40,374 - INFO - Processing link: https://interviewing.io/graphs-interview-questions
+2025-06-17 23:38:40,466 - INFO - Found article: https://interviewing.io/graphs-interview-questions | Length: 23541
+2025-06-17 23:38:40,485 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:40,486 - INFO - Processing link: https://interviewing.io/hash-tables-interview-questions
+2025-06-17 23:38:40,629 - INFO - Found article: https://interviewing.io/hash-tables-interview-questions | Length: 24544
+2025-06-17 23:38:40,658 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:40,658 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:40,659 - INFO - Processing link: https://interviewing.io/heaps-interview-questions
+2025-06-17 23:38:40,772 - INFO - Found article: https://interviewing.io/heaps-interview-questions | Length: 14479
+2025-06-17 23:38:40,794 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:40,794 - INFO - Processing link: https://interviewing.io/inorder-traversal-interview-questions
+2025-06-17 23:38:40,836 - INFO - Found article: https://interviewing.io/inorder-traversal-interview-questions | Length: 384
+2025-06-17 23:38:40,841 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:40,841 - INFO - Processing link: https://interviewing.io/mapreduce-interview-questions
+2025-06-17 23:38:40,913 - INFO - Found article: https://interviewing.io/mapreduce-interview-questions | Length: 14269
+2025-06-17 23:38:40,924 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:40,924 - INFO - Processing link: https://interviewing.io/maps-interview-questions
+2025-06-17 23:38:40,960 - INFO - Found article: https://interviewing.io/maps-interview-questions | Length: 358
+2025-06-17 23:38:40,964 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:40,964 - INFO - Processing link: https://interviewing.io/matrices-interview-questions
+2025-06-17 23:38:41,074 - INFO - Found article: https://interviewing.io/matrices-interview-questions | Length: 12441
+2025-06-17 23:38:41,092 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:41,092 - INFO - Processing link: https://interviewing.io/memoization-interview-questions
+2025-06-17 23:38:41,176 - INFO - Found article: https://interviewing.io/memoization-interview-questions | Length: 16398
+2025-06-17 23:38:41,193 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:41,193 - INFO - Processing link: https://interviewing.io/ordered-maps-interview-questions
+2025-06-17 23:38:41,245 - INFO - Found article: https://interviewing.io/ordered-maps-interview-questions | Length: 370
+2025-06-17 23:38:41,249 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:41,249 - INFO - Processing link: https://interviewing.io/parsing-interview-questions
+2025-06-17 23:38:41,320 - INFO - Found article: https://interviewing.io/parsing-interview-questions | Length: 6462
+2025-06-17 23:38:41,329 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:41,329 - INFO - Processing link: https://interviewing.io/queue-interview-questions
+2025-06-17 23:38:41,521 - INFO - Found article: https://interviewing.io/queue-interview-questions | Length: 27659
+2025-06-17 23:38:41,810 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:41,810 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:41,810 - INFO - Processing link: https://interviewing.io/recursion-interview-questions
+2025-06-17 23:38:42,013 - INFO - Found article: https://interviewing.io/recursion-interview-questions | Length: 29018
+2025-06-17 23:38:42,047 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:42,047 - INFO - Processing link: https://interviewing.io/search-interview-questions
+2025-06-17 23:38:42,108 - INFO - Found article: https://interviewing.io/search-interview-questions | Length: 620
+2025-06-17 23:38:42,116 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:42,116 - INFO - Processing link: https://interviewing.io/sets-interview-questions
+2025-06-17 23:38:42,191 - INFO - Found article: https://interviewing.io/sets-interview-questions | Length: 9909
+2025-06-17 23:38:42,205 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:42,205 - INFO - Processing link: https://interviewing.io/sliding-window-interview-questions
+2025-06-17 23:38:42,565 - INFO - Found article: https://interviewing.io/sliding-window-interview-questions | Length: 16563
+2025-06-17 23:38:42,585 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:42,585 - INFO - Processing link: https://interviewing.io/stacks-interview-questions
+2025-06-17 23:38:42,878 - INFO - Found article: https://interviewing.io/stacks-interview-questions | Length: 17232
+2025-06-17 23:38:42,904 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:42,904 - INFO - Processing link: https://interviewing.io/strings-interview-questions
+2025-06-17 23:38:43,061 - INFO - Found article: https://interviewing.io/strings-interview-questions | Length: 18885
+2025-06-17 23:38:43,095 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:43,096 - INFO - Processing link: https://interviewing.io/topological-sort-interview-questions
+2025-06-17 23:38:43,169 - INFO - Found article: https://interviewing.io/topological-sort-interview-questions | Length: 10654
+2025-06-17 23:38:43,180 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:43,180 - INFO - Processing link: https://interviewing.io/trees-interview-questions
+2025-06-17 23:38:43,276 - INFO - Found article: https://interviewing.io/trees-interview-questions | Length: 14393
+2025-06-17 23:38:43,293 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:43,293 - INFO - Processing link: https://interviewing.io/tries-interview-questions
+2025-06-17 23:38:43,395 - INFO - Found article: https://interviewing.io/tries-interview-questions | Length: 14973
+2025-06-17 23:38:43,415 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:43,415 - INFO - Processing link: https://interviewing.io/two-pointers-interview-questions
+2025-06-17 23:38:43,508 - INFO - Found article: https://interviewing.io/two-pointers-interview-questions | Length: 13267
+2025-06-17 23:38:43,527 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:43,527 - INFO - Processing link: https://interviewing.io/union-find-interview-questions
+2025-06-17 23:38:43,566 - INFO - Found article: https://interviewing.io/union-find-interview-questions | Length: 318
+2025-06-17 23:38:43,572 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:43,572 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:43,572 - INFO - Processing link: https://interviewing.io/mocks/google-system-design-distributed-databases
+2025-06-17 23:38:43,668 - INFO - Found article: https://interviewing.io/mocks/google-system-design-distributed-databases | Length: 37329
+2025-06-17 23:38:43,684 - INFO - Processing link: https://interviewing.io/mocks/google-java-order-statistic-of-an-unsorted-array
+2025-06-17 23:38:43,898 - INFO - Found article: https://interviewing.io/mocks/google-java-order-statistic-of-an-unsorted-array | Length: 33821
+2025-06-17 23:38:43,934 - INFO - Processing link: https://interviewing.io/mocks/linked-in-java-reverse-word-in-string
+2025-06-17 23:38:44,058 - INFO - Found article: https://interviewing.io/mocks/linked-in-java-reverse-word-in-string | Length: 15707
+2025-06-17 23:38:44,077 - INFO - Processing link: https://interviewing.io/mocks/airbnb-python-missing-item-list-difference
+2025-06-17 23:38:44,191 - INFO - Found article: https://interviewing.io/mocks/airbnb-python-missing-item-list-difference | Length: 17032
+2025-06-17 23:38:44,210 - INFO - Processing link: https://interviewing.io/mocks/microsoft-go-vertex-distance-order-statistic
+2025-06-17 23:38:44,357 - INFO - Found article: https://interviewing.io/mocks/microsoft-go-vertex-distance-order-statistic | Length: 19394
+2025-06-17 23:38:44,378 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:38:44,378 - INFO - Skipping non-article-like link: https://interviewing.io/questions
+2025-06-17 23:38:44,379 - INFO - Processing link: https://interviewing.io/questions/reverse-string
+2025-06-17 23:38:44,484 - INFO - Found article: https://interviewing.io/questions/reverse-string | Length: 15729
+2025-06-17 23:38:44,504 - INFO - Processing link: https://interviewing.io/questions/longest-substring-without-repeating-characters
+2025-06-17 23:38:44,845 - INFO - Found article: https://interviewing.io/questions/longest-substring-without-repeating-characters | Length: 13482
+2025-06-17 23:38:44,863 - INFO - Processing link: https://interviewing.io/questions/longest-common-subsequence
+2025-06-17 23:38:44,993 - INFO - Found article: https://interviewing.io/questions/longest-common-subsequence | Length: 15714
+2025-06-17 23:38:45,018 - INFO - Processing link: https://interviewing.io/questions/container-with-most-water
+2025-06-17 23:38:45,086 - INFO - Found article: https://interviewing.io/questions/container-with-most-water | Length: 5720
+2025-06-17 23:38:45,098 - INFO - Processing link: https://interviewing.io/questions/reverse-linked-list
+2025-06-17 23:38:45,177 - INFO - Found article: https://interviewing.io/questions/reverse-linked-list | Length: 8633
+2025-06-17 23:38:45,191 - INFO - Processing link: https://interviewing.io/questions/k-closest-points-to-origin
+2025-06-17 23:38:45,313 - INFO - Found article: https://interviewing.io/questions/k-closest-points-to-origin | Length: 10932
+2025-06-17 23:38:45,331 - INFO - Processing link: https://interviewing.io/questions/kth-smallest-element
+2025-06-17 23:38:45,428 - INFO - Found article: https://interviewing.io/questions/kth-smallest-element | Length: 9354
+2025-06-17 23:38:45,445 - INFO - Processing link: https://interviewing.io/questions/reverse-words-in-a-string
+2025-06-17 23:38:45,958 - INFO - Found article: https://interviewing.io/questions/reverse-words-in-a-string | Length: 8870
+2025-06-17 23:38:45,974 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:38:45,974 - INFO - Processing link: https://interviewing.io/guides/amazon-leadership-principles
+2025-06-17 23:38:46,112 - INFO - Found article: https://interviewing.io/guides/amazon-leadership-principles | Length: 12297
+2025-06-17 23:38:46,140 - INFO - Processing link: https://interviewing.io/guides/system-design-interview
+2025-06-17 23:38:46,241 - INFO - Found article: https://interviewing.io/guides/system-design-interview | Length: 25125
+2025-06-17 23:38:46,256 - INFO - Processing link: https://interviewing.io/guides/hiring-process
+2025-06-17 23:38:46,328 - INFO - Found article: https://interviewing.io/guides/hiring-process | Length: 17663
+2025-06-17 23:38:46,649 - INFO - Skipping non-article-like link: https://interviewing.io/
+2025-06-17 23:38:46,649 - INFO - Skipping non-article-like link: https://interviewing.io/employers
+2025-06-17 23:38:46,649 - INFO - Skipping non-article-like link: https://interviewing.io/blog
+2025-06-17 23:38:46,649 - INFO - Skipping non-article-like link: https://interviewing.io/employers
+2025-06-17 23:38:46,649 - INFO - Skipping non-article-like link: https://interviewing.io/faq
+2025-06-17 23:38:46,649 - INFO - Processing link: https://interviewing.io/.well-known/security.txt
+2025-06-17 23:38:46,675 - ERROR - parsed tree length: 0, wrong data type or not valid HTML
+2025-06-17 23:38:46,675 - ERROR - empty HTML tree: None
+2025-06-17 23:38:46,675 - WARNING - discarding data: None
+2025-06-17 23:38:46,675 - INFO - Skipping non-article-like link: https://interviewing.io/privacy
+2025-06-17 23:38:46,675 - INFO - Skipping non-article-like link: https://interviewing.io/terms
+2025-06-17 23:38:46,676 - INFO - Trying to find sitemap at: https://interviewing.io/sitemap.xml
+2025-06-17 23:38:46,865 - INFO - Could not find or process sitemap.xml. Reason: 404 Client Error: Not Found for url: https://interviewing.io/sitemap.xml
+2025-06-17 23:38:46,865 - INFO - Sitemap not found or empty, falling back to dynamic scraping for link discovery.
+2025-06-17 23:38:46,865 - INFO - ====== WebDriver manager ======
+2025-06-17 23:38:47,611 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-17 23:38:47,650 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-17 23:38:47,707 - INFO - Driver [C:\Users\caleb\.wdm\drivers\chromedriver\win64\137.0.7151.119\chromedriver-win32/chromedriver.exe] found in cache
+2025-06-17 23:38:58,128 - INFO - Skipping non-article-like link: https://interviewing.io/
+2025-06-17 23:38:58,128 - INFO - Skipping non-article-like link: https://interviewing.io/employers
+2025-06-17 23:38:58,128 - INFO - Processing link: https://interviewing.io/gift-practice-interviews
+2025-06-17 23:38:58,227 - INFO - Found article: https://interviewing.io/gift-practice-interviews | Length: 648
+2025-06-17 23:38:58,231 - INFO - Skipping non-article-like link: https://interviewing.io/blog
+2025-06-17 23:38:58,231 - INFO - Skipping non-article-like link: https://interviewing.io/faq
+2025-06-17 23:38:58,231 - INFO - Skipping non-article-like link: https://interviewing.io/signup
+2025-06-17 23:38:58,231 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:38:58,231 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:38:58,231 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:38:58,231 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:38:58,231 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:38:58,231 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:38:58,231 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:38:58,231 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:38:58,231 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:58,231 - INFO - Skipping non-article-like link: https://interviewing.io/signup
+2025-06-17 23:38:58,231 - INFO - Processing link: https://interviewing.io/guides/amazon-leadership-principles
+2025-06-17 23:38:58,394 - INFO - Found article: https://interviewing.io/guides/amazon-leadership-principles | Length: 12297
+2025-06-17 23:38:58,420 - INFO - Processing link: https://interviewing.io/guides/system-design-interview
+2025-06-17 23:38:58,514 - INFO - Found article: https://interviewing.io/guides/system-design-interview | Length: 25125
+2025-06-17 23:38:58,529 - INFO - Processing link: https://interviewing.io/guides/hiring-process
+2025-06-17 23:38:58,628 - INFO - Found article: https://interviewing.io/guides/hiring-process | Length: 17663
+2025-06-17 23:38:58,639 - INFO - Processing link: https://interviewing.io/guides/hiring-process/google
+2025-06-17 23:38:59,000 - INFO - Found article: https://interviewing.io/guides/hiring-process/google | Length: 17580
+2025-06-17 23:38:59,022 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:59,022 - INFO - Processing link: https://interviewing.io/guides/hiring-process/meta-facebook
+2025-06-17 23:38:59,164 - INFO - Found article: https://interviewing.io/guides/hiring-process/meta-facebook | Length: 14815
+2025-06-17 23:38:59,185 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:59,185 - INFO - Processing link: https://interviewing.io/guides/hiring-process/amazon
+2025-06-17 23:38:59,309 - INFO - Found article: https://interviewing.io/guides/hiring-process/amazon | Length: 14488
+2025-06-17 23:38:59,325 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:59,325 - INFO - Skipping non-article-like link: https://interviewing.io/topics
+2025-06-17 23:38:59,325 - INFO - Processing link: https://interviewing.io/javascript-interview-questions
+2025-06-17 23:38:59,622 - INFO - Found article: https://interviewing.io/javascript-interview-questions | Length: 23976
+2025-06-17 23:38:59,668 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:59,668 - INFO - Processing link: https://interviewing.io/python-interview-questions
+2025-06-17 23:38:59,802 - INFO - Found article: https://interviewing.io/python-interview-questions | Length: 7396
+2025-06-17 23:38:59,822 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:59,822 - INFO - Processing link: https://interviewing.io/java-interview-questions
+2025-06-17 23:38:59,931 - INFO - Found article: https://interviewing.io/java-interview-questions | Length: 14607
+2025-06-17 23:38:59,948 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:38:59,948 - INFO - Skipping non-article-like link: https://interviewing.io/topics
+2025-06-17 23:38:59,948 - INFO - Processing link: https://interviewing.io/system-design-interview-questions
+2025-06-17 23:39:00,030 - INFO - Found article: https://interviewing.io/system-design-interview-questions | Length: 1815
+2025-06-17 23:39:00,045 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:39:00,045 - INFO - Processing link: https://interviewing.io/dynamic-programming-interview-questions
+2025-06-17 23:39:00,165 - INFO - Found article: https://interviewing.io/dynamic-programming-interview-questions | Length: 13941
+2025-06-17 23:39:00,187 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:39:00,187 - INFO - Processing link: https://interviewing.io/binary-trees-interview-questions
+2025-06-17 23:39:00,337 - INFO - Found article: https://interviewing.io/binary-trees-interview-questions | Length: 21292
+2025-06-17 23:39:00,370 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:39:00,370 - INFO - Skipping non-article-like link: https://interviewing.io/topics
+2025-06-17 23:39:00,370 - INFO - Processing link: https://interviewing.io/questions/three-sum
+2025-06-17 23:39:00,492 - INFO - Found article: https://interviewing.io/questions/three-sum | Length: 11616
+2025-06-17 23:39:00,513 - INFO - Processing link: https://interviewing.io/questions/distributed-databases
+2025-06-17 23:39:00,566 - INFO - Found article: https://interviewing.io/questions/distributed-databases | Length: 10125
+2025-06-17 23:39:00,574 - INFO - Processing link: https://interviewing.io/questions/intersection-of-linked-list
+2025-06-17 23:39:00,658 - INFO - Found article: https://interviewing.io/questions/intersection-of-linked-list | Length: 5006
+2025-06-17 23:39:00,671 - INFO - Processing link: https://interviewing.io/questions/k-largest-elements
+2025-06-17 23:39:00,747 - INFO - Found article: https://interviewing.io/questions/k-largest-elements | Length: 4686
+2025-06-17 23:39:00,759 - INFO - Processing link: https://interviewing.io/questions/simplify-path
+2025-06-17 23:39:00,848 - INFO - Found article: https://interviewing.io/questions/simplify-path | Length: 11260
+2025-06-17 23:39:00,866 - INFO - Processing link: https://interviewing.io/questions/find-missing-number-in-array
+2025-06-17 23:39:00,983 - INFO - Found article: https://interviewing.io/questions/find-missing-number-in-array | Length: 11897
+2025-06-17 23:39:01,005 - INFO - Skipping non-article-like link: https://interviewing.io/questions
+2025-06-17 23:39:01,006 - INFO - Processing link: https://interviewing.io/blog/its-ok-to-postpone-your-interviews-if-youre-not-ready
+2025-06-17 23:39:01,138 - INFO - Found article: https://interviewing.io/blog/its-ok-to-postpone-your-interviews-if-youre-not-ready | Length: 7254
+2025-06-17 23:39:01,145 - INFO - Processing link: https://interviewing.io/blog/nine-free-chapters-of-beyond-cracking-the-coding-interview
+2025-06-17 23:39:01,204 - INFO - Found article: https://interviewing.io/blog/nine-free-chapters-of-beyond-cracking-the-coding-interview | Length: 443
+2025-06-17 23:39:01,209 - INFO - Processing link: https://interviewing.io/blog/how-to-get-in-the-door-at-top-companies-cold-out-reach-to-hiring-managers-part-2
+2025-06-17 23:39:01,331 - INFO - Found article: https://interviewing.io/blog/how-to-get-in-the-door-at-top-companies-cold-out-reach-to-hiring-managers-part-2 | Length: 16747
+2025-06-17 23:39:01,345 - INFO - Processing link: https://interviewing.io/blog/are-recruiters-better-than-a-coin-flip-at-judging-resumes
+2025-06-17 23:39:01,430 - INFO - Found article: https://interviewing.io/blog/are-recruiters-better-than-a-coin-flip-at-judging-resumes | Length: 21492
+2025-06-17 23:39:01,443 - INFO - Processing link: https://interviewing.io/blog/how-to-negotiate-with-meta
+2025-06-17 23:39:01,548 - INFO - Found article: https://interviewing.io/blog/how-to-negotiate-with-meta | Length: 21345
+2025-06-17 23:39:01,559 - INFO - Processing link: https://interviewing.io/blog/sabotage-salary-negotiation-before-even-start
+2025-06-17 23:39:01,645 - INFO - Found article: https://interviewing.io/blog/sabotage-salary-negotiation-before-even-start | Length: 22587
+2025-06-17 23:39:01,657 - INFO - Skipping non-article-like link: https://interviewing.io/blog
+2025-06-17 23:39:01,658 - INFO - Skipping non-article-like link: https://interviewing.io/videos
+2025-06-17 23:39:01,658 - INFO - Skipping non-article-like link: https://interviewing.io/mocks
+2025-06-17 23:39:01,658 - INFO - Processing link: https://interviewing.io/mocks/google-system-design-distributed-databases
+2025-06-17 23:39:01,755 - INFO - Found article: https://interviewing.io/mocks/google-system-design-distributed-databases | Length: 37329
+2025-06-17 23:39:01,773 - INFO - Processing link: https://interviewing.io/mocks/google-java-order-statistic-of-an-unsorted-array
+2025-06-17 23:39:01,973 - INFO - Found article: https://interviewing.io/mocks/google-java-order-statistic-of-an-unsorted-array | Length: 33821
+2025-06-17 23:39:02,009 - INFO - Processing link: https://interviewing.io/mocks/linked-in-java-reverse-word-in-string
+2025-06-17 23:39:02,126 - INFO - Found article: https://interviewing.io/mocks/linked-in-java-reverse-word-in-string | Length: 15707
+2025-06-17 23:39:02,146 - INFO - Processing link: https://interviewing.io/mocks/airbnb-python-missing-item-list-difference
+2025-06-17 23:39:02,267 - INFO - Found article: https://interviewing.io/mocks/airbnb-python-missing-item-list-difference | Length: 17032
+2025-06-17 23:39:02,287 - INFO - Processing link: https://interviewing.io/mocks/microsoft-go-vertex-distance-order-statistic
+2025-06-17 23:39:02,441 - INFO - Found article: https://interviewing.io/mocks/microsoft-go-vertex-distance-order-statistic | Length: 19394
+2025-06-17 23:39:02,466 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:39:02,466 - INFO - Processing link: https://interviewing.io/guides/hiring-process/apple
+2025-06-17 23:39:02,578 - INFO - Found article: https://interviewing.io/guides/hiring-process/apple | Length: 21517
+2025-06-17 23:39:02,595 - INFO - Processing link: https://interviewing.io/guides/hiring-process/netflix
+2025-06-17 23:39:02,679 - INFO - Found article: https://interviewing.io/guides/hiring-process/netflix | Length: 12374
+2025-06-17 23:39:02,694 - INFO - Processing link: https://interviewing.io/guides/hiring-process/microsoft
+2025-06-17 23:39:02,809 - INFO - Found article: https://interviewing.io/guides/hiring-process/microsoft | Length: 8781
+2025-06-17 23:39:02,826 - INFO - Skipping non-article-like link: https://interviewing.io/questions
+2025-06-17 23:39:02,826 - INFO - Processing link: https://interviewing.io/questions/reverse-string
+2025-06-17 23:39:02,970 - INFO - Found article: https://interviewing.io/questions/reverse-string | Length: 15729
+2025-06-17 23:39:02,991 - INFO - Processing link: https://interviewing.io/questions/longest-substring-without-repeating-characters
+2025-06-17 23:39:03,093 - INFO - Found article: https://interviewing.io/questions/longest-substring-without-repeating-characters | Length: 13482
+2025-06-17 23:39:03,110 - INFO - Processing link: https://interviewing.io/questions/longest-common-subsequence
+2025-06-17 23:39:03,248 - INFO - Found article: https://interviewing.io/questions/longest-common-subsequence | Length: 15714
+2025-06-17 23:39:03,278 - INFO - Processing link: https://interviewing.io/questions/container-with-most-water
+2025-06-17 23:39:03,370 - INFO - Found article: https://interviewing.io/questions/container-with-most-water | Length: 5720
+2025-06-17 23:39:03,791 - INFO - Processing link: https://interviewing.io/questions/reverse-linked-list
+2025-06-17 23:39:03,887 - INFO - Found article: https://interviewing.io/questions/reverse-linked-list | Length: 8633
+2025-06-17 23:39:03,899 - INFO - Processing link: https://interviewing.io/questions/k-closest-points-to-origin
+2025-06-17 23:39:04,022 - INFO - Found article: https://interviewing.io/questions/k-closest-points-to-origin | Length: 10932
+2025-06-17 23:39:04,041 - INFO - Processing link: https://interviewing.io/questions/kth-smallest-element
+2025-06-17 23:39:04,153 - INFO - Found article: https://interviewing.io/questions/kth-smallest-element | Length: 9354
+2025-06-17 23:39:04,172 - INFO - Processing link: https://interviewing.io/questions/reverse-words-in-a-string
+2025-06-17 23:39:04,263 - INFO - Found article: https://interviewing.io/questions/reverse-words-in-a-string | Length: 8870
+2025-06-17 23:39:04,279 - INFO - Skipping non-article-like link: https://interviewing.io/learn
+2025-06-17 23:39:04,279 - INFO - Skipping non-article-like link: https://interviewing.io/
+2025-06-17 23:39:04,279 - INFO - Skipping non-article-like link: https://interviewing.io/employers
+2025-06-17 23:39:04,279 - INFO - Skipping non-article-like link: https://interviewing.io/blog
+2025-06-17 23:39:04,279 - INFO - Skipping non-article-like link: https://interviewing.io/employers
+2025-06-17 23:39:04,279 - INFO - Skipping non-article-like link: https://interviewing.io/faq
+2025-06-17 23:39:04,279 - INFO - Processing link: https://interviewing.io/.well-known/security.txt
+2025-06-17 23:39:04,303 - ERROR - parsed tree length: 0, wrong data type or not valid HTML
+2025-06-17 23:39:04,303 - ERROR - empty HTML tree: None
+2025-06-17 23:39:04,303 - WARNING - discarding data: None
+2025-06-17 23:39:04,303 - INFO - Skipping non-article-like link: https://interviewing.io/privacy
+2025-06-17 23:39:04,304 - INFO - Skipping non-article-like link: https://interviewing.io/terms
+2025-06-17 23:39:04,304 - INFO - Trying to find sitemap at: https://nilmamano.com/sitemap.xml
+2025-06-17 23:39:04,412 - INFO - Could not find or process sitemap.xml. Reason: 404 Client Error: Not Found for url: https://nilmamano.com/sitemap.xml
+2025-06-17 23:39:04,412 - INFO - Sitemap not found or empty, falling back to dynamic scraping for link discovery.
+2025-06-17 23:39:04,412 - INFO - ====== WebDriver manager ======
+2025-06-17 23:39:05,109 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-17 23:39:05,161 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-17 23:39:05,212 - INFO - Driver [C:\Users\caleb\.wdm\drivers\chromedriver\win64\137.0.7151.119\chromedriver-win32/chromedriver.exe] found in cache
+2025-06-17 23:39:14,109 - INFO - Skipping non-article-like link: https://nilmamano.com/
+2025-06-17 23:39:14,110 - INFO - Skipping non-article-like link: https://nilmamano.com/
+2025-06-17 23:39:14,110 - INFO - Skipping non-article-like link: https://nilmamano.com/
+2025-06-17 23:39:14,110 - INFO - Skipping non-article-like link: https://nilmamano.com/research
+2025-06-17 23:39:14,110 - INFO - Skipping non-article-like link: https://nilmamano.com/
+2025-06-17 23:39:14,110 - INFO - Skipping non-article-like link: https://nilmamano.com/
+2025-06-17 23:39:14,110 - INFO - Processing link: https://nilmamano.com/media-kit
+2025-06-17 23:39:14,221 - INFO - Found article: https://nilmamano.com/media-kit | Length: 869
+2025-06-17 23:39:14,224 - INFO - Skipping non-article-like link: https://nilmamano.com/personal
+2025-06-17 23:39:14,224 - INFO - Skipping non-article-like link: https://nilmamano.com/blog
+2025-06-17 23:39:14,224 - INFO - Processing link: https://nilmamano.com/blog/in-defense-of-coding-interviews
+2025-06-17 23:39:17,226 - INFO - Found article: https://nilmamano.com/blog/in-defense-of-coding-interviews | Length: 15764
+2025-06-17 23:39:17,234 - INFO - Processing link: https://nilmamano.com/blog/binary-search
+2025-06-17 23:39:17,605 - INFO - Found article: https://nilmamano.com/blog/binary-search | Length: 5191
+2025-06-17 23:39:17,611 - INFO - Processing link: https://nilmamano.com/blog/problem-solving-bctci-style
+2025-06-17 23:39:18,147 - INFO - Found article: https://nilmamano.com/blog/problem-solving-bctci-style | Length: 16394
+2025-06-17 23:39:18,159 - INFO - Processing link: https://nilmamano.com/blog/heapify-analysis
+2025-06-17 23:39:18,510 - INFO - Found article: https://nilmamano.com/blog/heapify-analysis | Length: 8814
+2025-06-17 23:39:18,529 - INFO - Processing link: https://nilmamano.com/blog/lazy-vs-eager
+2025-06-17 23:39:18,961 - INFO - Found article: https://nilmamano.com/blog/lazy-vs-eager | Length: 14570
+2025-06-17 23:39:18,974 - INFO - Processing link: https://nilmamano.com/blog/implementing-dijkstra
+2025-06-17 23:39:19,411 - INFO - Found article: https://nilmamano.com/blog/implementing-dijkstra | Length: 22724
+2025-06-17 23:39:19,432 - INFO - Processing link: https://nilmamano.com/blog/reachability-problems-and-dfs
+2025-06-17 23:39:19,844 - INFO - Found article: https://nilmamano.com/blog/reachability-problems-and-dfs | Length: 14740
+2025-06-17 23:39:19,854 - INFO - Processing link: https://nilmamano.com/blog/breaking-down-dynamic-programming
+2025-06-17 23:39:20,249 - INFO - Found article: https://nilmamano.com/blog/breaking-down-dynamic-programming | Length: 18730
+2025-06-17 23:39:20,262 - INFO - Processing link: https://nilmamano.com/blog/iterativetreetraversal
+2025-06-17 23:39:20,579 - INFO - Found article: https://nilmamano.com/blog/iterativetreetraversal | Length: 20008
+2025-06-17 23:39:20,591 - INFO - Skipping non-article-like link: https://nilmamano.com/
+2025-06-17 23:39:20,592 - INFO - Trying to find sitemap at: https://shreycation.substack.com/sitemap.xml
+2025-06-17 23:39:20,878 - INFO - Found 12 URLs in sitemap.
+2025-06-17 23:39:20,878 - INFO - Sitemap not found or empty, falling back to dynamic scraping for link discovery.
+2025-06-17 23:39:20,879 - INFO - ====== WebDriver manager ======
+2025-06-17 23:39:21,758 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-17 23:39:21,809 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-17 23:39:21,871 - INFO - Driver [C:\Users\caleb\.wdm\drivers\chromedriver\win64\137.0.7151.119\chromedriver-win32/chromedriver.exe] found in cache
+2025-06-17 23:39:31,851 - INFO - Skipping non-article-like link: https://shreycation.substack.com/
+2025-06-17 23:39:31,851 - INFO - Skipping non-article-like link: https://shreycation.substack.com/
+2025-06-17 23:39:31,851 - INFO - Skipping non-article-like link: https://shreycation.substack.com/
+2025-06-17 23:39:31,851 - INFO - Processing link: https://shreycation.substack.com/t/snacks
+2025-06-17 23:39:32,231 - INFO - Found article: https://shreycation.substack.com/t/snacks | Length: 1421
+2025-06-17 23:39:32,256 - INFO - Skipping non-article-like link: https://shreycation.substack.com/leaderboard
+2025-06-17 23:39:32,256 - INFO - Processing link: https://shreycation.substack.com/p/snacks-its-not-too-late-for-euro
+2025-06-17 23:39:32,343 - INFO - Found article: https://shreycation.substack.com/p/snacks-its-not-too-late-for-euro | Length: 6024
+2025-06-17 23:39:32,364 - INFO - Processing link: https://shreycation.substack.com/p/snacks-its-not-too-late-for-euro/comments
+2025-06-17 23:39:32,441 - INFO - Found article: https://shreycation.substack.com/p/snacks-its-not-too-late-for-euro/comments | Length: 695
+2025-06-17 23:39:32,456 - INFO - Processing link: https://shreycation.substack.com/p/snacks-lyft-girl-math
+2025-06-17 23:39:32,526 - INFO - Found article: https://shreycation.substack.com/p/snacks-lyft-girl-math | Length: 1733
+2025-06-17 23:39:32,547 - INFO - Processing link: https://shreycation.substack.com/p/snacks-lyft-girl-math/comments
+2025-06-17 23:39:32,614 - INFO - Found article: https://shreycation.substack.com/p/snacks-lyft-girl-math/comments | Length: 622
+2025-06-17 23:39:32,632 - INFO - Processing link: https://shreycation.substack.com/p/robinhood-gold-card
+2025-06-17 23:39:32,742 - INFO - Found article: https://shreycation.substack.com/p/robinhood-gold-card | Length: 13835
+2025-06-17 23:39:32,769 - INFO - Processing link: https://shreycation.substack.com/p/robinhood-gold-card/comments
+2025-06-17 23:39:32,842 - INFO - Found article: https://shreycation.substack.com/p/robinhood-gold-card/comments | Length: 557
+2025-06-17 23:39:32,853 - INFO - Processing link: https://shreycation.substack.com/p/snacks-alaska-joins-bilt
+2025-06-17 23:39:32,937 - INFO - Found article: https://shreycation.substack.com/p/snacks-alaska-joins-bilt | Length: 5669
+2025-06-17 23:39:32,958 - INFO - Processing link: https://shreycation.substack.com/p/snacks-alaska-joins-bilt/comments
+2025-06-17 23:39:33,044 - INFO - Processing link: https://shreycation.substack.com/p/how-to-actually-transfer-your-points
+2025-06-17 23:39:33,137 - INFO - Found article: https://shreycation.substack.com/p/how-to-actually-transfer-your-points | Length: 10952
+2025-06-17 23:39:33,160 - INFO - Processing link: https://shreycation.substack.com/p/how-to-actually-transfer-your-points/comments
+2025-06-17 23:39:33,222 - INFO - Found article: https://shreycation.substack.com/p/how-to-actually-transfer-your-points/comments | Length: 396
+2025-06-17 23:39:33,234 - INFO - Processing link: https://shreycation.substack.com/p/snacks-air-canada-bonus
+2025-06-17 23:39:33,312 - INFO - Found article: https://shreycation.substack.com/p/snacks-air-canada-bonus | Length: 4986
+2025-06-17 23:39:33,329 - INFO - Processing link: https://shreycation.substack.com/p/snacks-air-canada-bonus/comments
+2025-06-17 23:39:33,392 - INFO - Found article: https://shreycation.substack.com/p/snacks-air-canada-bonus/comments | Length: 322
+2025-06-17 23:39:33,404 - INFO - Processing link: https://shreycation.substack.com/p/issue-3
+2025-06-17 23:39:33,488 - INFO - Found article: https://shreycation.substack.com/p/issue-3 | Length: 11182
+2025-06-17 23:39:33,511 - INFO - Processing link: https://shreycation.substack.com/p/issue-3/comments
+2025-06-17 23:39:33,591 - INFO - Found article: https://shreycation.substack.com/p/issue-3/comments | Length: 640
+2025-06-17 23:39:33,605 - INFO - Processing link: https://shreycation.substack.com/p/snacks-free-miles-shopping-portals
+2025-06-17 23:39:33,683 - INFO - Found article: https://shreycation.substack.com/p/snacks-free-miles-shopping-portals | Length: 4010
+2025-06-17 23:39:33,705 - INFO - Processing link: https://shreycation.substack.com/p/snacks-free-miles-shopping-portals/comments
+2025-06-17 23:39:33,782 - INFO - Found article: https://shreycation.substack.com/p/snacks-free-miles-shopping-portals/comments | Length: 540
+2025-06-17 23:39:33,796 - INFO - Processing link: https://shreycation.substack.com/p/issue-2
+2025-06-17 23:39:33,891 - INFO - Found article: https://shreycation.substack.com/p/issue-2 | Length: 13665
+2025-06-17 23:39:33,914 - INFO - Processing link: https://shreycation.substack.com/p/issue-2/comments
+2025-06-17 23:39:33,996 - INFO - Found article: https://shreycation.substack.com/p/issue-2/comments | Length: 1495
+2025-06-17 23:39:34,009 - INFO - Processing link: https://shreycation.substack.com/p/issue-1
+2025-06-17 23:39:34,122 - INFO - Found article: https://shreycation.substack.com/p/issue-1 | Length: 21415
+2025-06-17 23:39:34,154 - INFO - Processing link: https://shreycation.substack.com/p/issue-1/comments
+2025-06-17 23:39:34,251 - INFO - Found article: https://shreycation.substack.com/p/issue-1/comments | Length: 565
+2025-06-17 23:39:34,269 - INFO - Skipping non-article-like link: https://shreycation.substack.com/about
+2025-06-17 23:39:34,270 - INFO - Skipping non-article-like link: https://shreycation.substack.com/archive
+2025-06-17 23:39:34,270 - INFO - Skipping non-article-like link: https://shreycation.substack.com/sitemap
+2025-06-17 23:39:34,270 - INFO - Skipping non-article-like link: https://shreycation.substack.com/
+2025-06-17 23:39:34,270 - INFO - Trying to find sitemap at: https://a16z.com/sitemap.xml
+2025-06-17 23:39:34,568 - INFO - Could not find or process sitemap.xml. Reason: 404 Client Error: Not Found for url: https://a16z.com/sitemap.xml
+2025-06-17 23:39:34,568 - INFO - Sitemap not found or empty, falling back to dynamic scraping for link discovery.
+2025-06-17 23:39:34,568 - INFO - ====== WebDriver manager ======
+2025-06-17 23:39:35,431 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-17 23:39:35,491 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-17 23:39:35,536 - INFO - Driver [C:\Users\caleb\.wdm\drivers\chromedriver\win64\137.0.7151.119\chromedriver-win32/chromedriver.exe] found in cache
+2025-06-17 23:39:45,920 - INFO - Skipping non-article-like link: https://a16z.com/
+2025-06-17 23:39:45,920 - INFO - Skipping non-article-like link: https://a16z.com/
+2025-06-17 23:39:45,920 - INFO - Processing link: https://a16z.com/news-content/
+2025-06-17 23:39:46,478 - INFO - Found article: https://a16z.com/news-content/ | Length: 16773
+2025-06-17 23:39:46,555 - INFO - Skipping non-article-like link: https://a16z.com/portfolio/
+2025-06-17 23:39:46,555 - INFO - Skipping non-article-like link: https://a16z.com/team/
+2025-06-17 23:39:46,555 - INFO - Skipping non-article-like link: https://a16z.com/about/
+2025-06-17 23:39:46,555 - INFO - Skipping non-article-like link: https://a16z.com/connect/
+2025-06-17 23:39:46,555 - INFO - Skipping non-article-like link: https://a16z.com/ai/
+2025-06-17 23:39:46,555 - INFO - Processing link: https://a16z.com/american-dynamism/
+2025-06-17 23:39:46,937 - INFO - Found article: https://a16z.com/american-dynamism/ | Length: 13487
+2025-06-17 23:39:47,015 - INFO - Processing link: https://a16z.com/bio-health/
+2025-06-17 23:39:47,430 - INFO - Skipping non-article-like link: https://a16z.com/consumer/
+2025-06-17 23:39:47,430 - INFO - Skipping non-article-like link: https://a16z.com/enterprise/
+2025-06-17 23:39:47,431 - INFO - Skipping non-article-like link: https://a16z.com/fintech/
+2025-06-17 23:39:47,431 - INFO - Skipping non-article-like link: https://a16z.com/games/
+2025-06-17 23:39:47,431 - INFO - Skipping non-article-like link: https://a16z.com/infra/
+2025-06-17 23:39:47,431 - INFO - Skipping non-article-like link: https://a16z.com/seed/
+2025-06-17 23:39:47,431 - INFO - Skipping non-article-like link: https://a16z.com/growth/
+2025-06-17 23:39:47,431 - INFO - Skipping non-article-like link: https://a16z.com/clf/
+2025-06-17 23:39:47,431 - INFO - Skipping non-article-like link: https://a16z.com/txo/
+2025-06-17 23:39:47,431 - INFO - Skipping non-article-like link: https://a16z.com/perennial/
+2025-06-17 23:39:47,431 - INFO - Skipping non-article-like link: https://a16z.com/search/
+2025-06-17 23:39:47,431 - INFO - Skipping non-article-like link: https://a16z.com/
+2025-06-17 23:39:47,431 - INFO - Skipping non-article-like link: https://a16z.com/
+2025-06-17 23:39:47,431 - INFO - Processing link: https://a16z.com/terms-of-use/
+2025-06-17 23:39:47,755 - INFO - Found article: https://a16z.com/terms-of-use/ | Length: 8353
+2025-06-17 23:39:47,769 - INFO - Skipping non-article-like link: https://a16z.com/conduct/
+2025-06-17 23:39:47,769 - INFO - Processing link: https://a16z.com/privacy-policy/
+2025-06-17 23:39:48,211 - INFO - Found article: https://a16z.com/privacy-policy/ | Length: 11542
+2025-06-17 23:39:48,227 - INFO - Skipping non-article-like link: https://a16z.com/disclosures/
+2025-06-17 23:39:48,227 - INFO - Skipping non-article-like link: https://a16z.com/
+2025-06-17 23:39:48,227 - INFO - Processing link: https://a16z.com/terms-of-use-privacy/
+2025-06-17 23:39:48,588 - INFO - Found article: https://a16z.com/terms-of-use-privacy/ | Length: 11542
+2025-06-17 23:39:48,601 - INFO - Trying to find sitemap at: http://www.paulgraham.com/sitemap.xml
+2025-06-17 23:39:48,900 - INFO - Could not find or process sitemap.xml. Reason: 404 Client Error: Not Found for url: http://www.paulgraham.com/sitemap.xml
+2025-06-17 23:39:48,900 - INFO - Sitemap not found or empty, falling back to dynamic scraping for link discovery.
+2025-06-17 23:39:48,900 - INFO - ====== WebDriver manager ======
+2025-06-17 23:39:49,677 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-17 23:39:49,738 - INFO - Get LATEST chromedriver version for google-chrome
+2025-06-17 23:39:49,783 - INFO - Driver [C:\Users\caleb\.wdm\drivers\chromedriver\win64\137.0.7151.119\chromedriver-win32/chromedriver.exe] found in cache
+2025-06-17 23:39:59,927 - INFO - Skipping non-article-like link: https://www.paulgraham.com/index.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/greatwork.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/kids.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/selfindulgence.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/field.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/goodwriting.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/do.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/woke.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/writes.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/when.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/foundermode.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/persistence.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/reddits.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/google.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/best.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/superlinear.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/greatwork.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/getideas.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/read.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/want.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/alien.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/users.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/heresy.html
+2025-06-17 23:39:59,928 - INFO - Skipping non-article-like link: https://www.paulgraham.com/words.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/goodtaste.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/smart.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/weird.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/hwh.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/own.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/fn.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/newideas.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/nft.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/real.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/richnow.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/simply.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/donate.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/worked.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/earnest.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/ace.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/airbnbs.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/think.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/early.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/wtax.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/conformism.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/orth.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/cred.html
+2025-06-17 23:39:59,929 - INFO - Skipping non-article-like link: https://www.paulgraham.com/useful.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/noob.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/fh.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/mod.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/fp.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/kids.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/lesson.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/nov.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/genius.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/sun.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/pow.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/disc.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/pgh.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/vb.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/ineq.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/re.html
+2025-06-17 23:39:59,930 - INFO - Skipping non-article-like link: https://www.paulgraham.com/jessica.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/bias.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/talk.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/aord.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/safe.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/name.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/altair.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/ronco.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/work.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/corpdev.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/95.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/ecw.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/know.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/pinch.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/mean.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/before.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/fr.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/herd.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/convince.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/ds.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/invtrend.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/startupideas.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/hw.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/growth.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/swan.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/todo.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/speak.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/ycstart.html
+2025-06-17 23:39:59,931 - INFO - Skipping non-article-like link: https://www.paulgraham.com/property.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/ambitious.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/word.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/schlep.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/vw.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/hubs.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/patentpledge.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/airbnb.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/control.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/tablets.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/founders.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/superangels.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/seesv.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/hiresfund.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/yahoo.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/future.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/addiction.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/top.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/selfindulgence.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/organic.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/apple.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/really.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/discover.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/publishing.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/nthings.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/determination.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/kate.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/segway.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/ramenprofitable.html
+2025-06-17 23:39:59,932 - INFO - Skipping non-article-like link: https://www.paulgraham.com/makersschedule.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/revolution.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/twitter.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/foundervisa.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/5founders.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/relres.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/angelinvesting.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/convergence.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/maybe.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/hackernews.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/13sentences.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/identity.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/credentials.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/divergence.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/highres.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/artistsship.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/badeconomy.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/fundraising.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/prcmc.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/cities.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/distraction.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/lies.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/good.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/googles.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/heroes.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/disagree.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/boss.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/ycombinator.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/trolls.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/newthings.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/startuphubs.html
+2025-06-17 23:39:59,933 - INFO - Skipping non-article-like link: https://www.paulgraham.com/webstartups.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/philosophy.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/colleges.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/die.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/head.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/stuff.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/equity.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/unions.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/guidetoinvestors.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/judgement.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/microsoft.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/notnot.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/wisdom.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/foundersatwork.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/goodart.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/startupmistakes.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/mit.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/investors.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/copy.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/island.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/marginal.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/america.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/siliconvalley.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/startuplessons.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/randomness.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/softwarepatents.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/6631327.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/whyyc.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/love.html
+2025-06-17 23:39:59,934 - INFO - Skipping non-article-like link: https://www.paulgraham.com/procrastination.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/web20.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/startupfunding.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/vcsqueeze.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/ideas.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/sfp.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/inequality.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/ladder.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/opensource.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/hiring.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/submarine.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/bronze.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/mac.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/writing44.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/college.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/venturecapital.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/start.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/hs.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/usa.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/charisma.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/polls.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/laundry.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/bubble.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/essay.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/pypar.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/gh.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/gap.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/wealth.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/gba.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/say.html
+2025-06-17 23:39:59,935 - INFO - Skipping non-article-like link: https://www.paulgraham.com/ffb.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/hp.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/iflisp.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/hundred.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/nerds.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/better.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/desres.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/spam.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/icad.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/power.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/fix.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/taste.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/noop.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/diff.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/road.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/rootsoflisp.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/langdes.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/popular.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/javacover.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/avg.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/lwba.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/progbot.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/prop62.html
+2025-06-17 23:39:59,936 - INFO - Skipping non-article-like link: https://www.paulgraham.com/rss.html
+2025-06-17 23:39:59,936 - INFO - No articles found in links, trying the main URL itself.
