@@ -43,9 +43,8 @@ def get_driver(url):
     # Check if running on Heroku and set Chrome options accordingly
     if "GOOGLE_CHROME_BIN" in os.environ:
         options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-        # On Heroku, the buildpack places the correct driver in the PATH,
-        # so we don't need to specify it.
-        service = ChromeService(log_output=os.devnull)
+        # Explicitly set the path to the chromedriver provided by the buildpack
+        service = ChromeService(executable_path=os.environ.get("CHROMEDRIVER_PATH"), log_output=os.devnull)
     else:
         # Local development
         service = ChromeService(ChromeDriverManager().install(), log_output=os.devnull)
