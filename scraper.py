@@ -12,7 +12,6 @@ import logging
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
@@ -37,16 +36,19 @@ def get_driver(url):
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-    options.add_argument('--log-level=3')  # Suppress console logs
+    options.add_argument('--log-level=3')
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
-    # Check if running on Heroku and set Chrome options accordingly
+    # Check if running on Heroku
     if "GOOGLE_CHROME_BIN" in os.environ:
         options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-        # Explicitly set the path to the chromedriver provided by the buildpack
-        service = ChromeService(executable_path=os.environ.get("CHROMEDRIVER_PATH"), log_output=os.devnull)
+        chromedriver_path = os.environ.get("CHROMEDRIVER_PATH")
+        # Add a log to confirm the path is being read
+        print(f"Heroku ChromeDriver Path: {chromedriver_path}")
+        service = ChromeService(executable_path=chromedriver_path, log_output=os.devnull)
     else:
-        # Local development
+        # Local development: import and use webdriver-manager only here
+        from webdriver_manager.chrome import ChromeDriverManager
         service = ChromeService(ChromeDriverManager().install(), log_output=os.devnull)
     
     driver = webdriver.Chrome(service=service, options=options)
