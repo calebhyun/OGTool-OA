@@ -5,4 +5,8 @@ markdownify
 PyMuPDF
 cloudscraper
 selenium
-webdriver-manager 
+webdriver-manager
+Flask
+Flask-SocketIO
+gevent
+python-socketio[client] 

@@ -17,6 +17,9 @@ import time
 import re
 import csv
 
+# Silence the webdriver-manager logger
+logging.getLogger('webdriver_manager').setLevel(logging.WARNING)
+
 logging.basicConfig(filename='log.txt', level=logging.INFO, 
                     format='%(asctime)s - %(levelname)s - %(message)s', filemode='w')
 
@@ -26,19 +29,23 @@ def get_driver(url):
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--log-level=3')  # Suppress console logs
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+
+    service = ChromeService(ChromeDriverManager().install(), log_output=os.devnull)
     
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+    driver = webdriver.Chrome(service=service, options=options)
     driver.get(url)
-    time.sleep(5) # Reduced wait time now that we are more efficient
+    time.sleep(5) 
     return driver
 
 def scrape_sitemap(url):
-    """Finds and scrapes URLs from a sitemap."""
+    """Finds and scrapes URLs from a sitemap. Yields logs, returns items."""
     items = []
     parsed_url = urlparse(url)
     sitemap_url = urlunparse((parsed_url.scheme, parsed_url.netloc, 'sitemap.xml', '', '', ''))
     
-    logging.info(f"Trying to find sitemap at: {sitemap_url}")
+    yield f"Trying to find sitemap at: {sitemap_url}"
     
     try:
         scraper = cloudscraper.create_scraper()
@@ -48,14 +55,14 @@ def scrape_sitemap(url):
         sitemap_soup = BeautifulSoup(response.content, 'xml')
         urls = [loc.text for loc in sitemap_soup.find_all('loc')]
         
-        logging.info(f"Found {len(urls)} URLs in sitemap.")
+        yield f"Found {len(urls)} URLs in sitemap."
         
         # Filter for blog-like URLs from the sitemap
-        blog_urls = [u for u in urls if '/blog/' in u or '/post/' in u or re.search(r'/\d{4}/\d{2}/', u)]
+        blog_urls = [u for u in urls if '/blog/' in u or '/post/' in u or re.search(r'/\\d{4}/\\d{2}/', u)]
 
         for blog_url in blog_urls:
             try:
-                logging.info(f"Scraping from sitemap URL: {blog_url}")
+                yield f"Scraping from sitemap URL: {blog_url}"
                 page_content = scraper.get(blog_url, timeout=15).text
                 content = trafilatura.extract(page_content)
                 if content and len(content) > 300:
@@ -70,41 +77,60 @@ def scrape_sitemap(url):
                         "user_id": ""
                     })
             except Exception as e:
-                logging.error(f"Could not process sitemap URL {blog_url}. Reason: {e}")
+                yield f"Could not process sitemap URL {blog_url}. Reason: {e}"
 
     except Exception as e:
-        logging.info(f"Could not find or process sitemap.xml. Reason: {e}")
+        yield f"Could not find or process sitemap.xml. Reason: {e}"
 
     return items
 
 
-def scrape_url(url):
-    """Scrapes a single URL or a blog index page."""
+def scrape_url(url, use_selenium=True):
+    """
+    Scrapes a single URL. 
+    First attempts a static scrape. If no articles are found, 
+    falls back to Selenium if use_selenium is True.
+    Yields logs, returns items.
+    """
     items = []
 
-    # First, try scraping the sitemap
-    sitemap_items = scrape_sitemap(url)
-    if sitemap_items:
-        return sitemap_items
-
-    # If sitemap fails or is empty, fall back to dynamic scraping for link discovery.
-    logging.info("Sitemap not found or empty, falling back to dynamic scraping for link discovery.")
-    
-    processed_urls = set()
-    driver = None
+    # --- Step 1: Try Sitemap ---
+    yield "Phase 1: Attempting to scrape sitemap..."
+    sitemap_scraper = scrape_sitemap(url)
+    sitemap_items = []
     try:
-        # Always use Selenium for initial link discovery for robustness against SPAs
-        driver = get_driver(url)
-        page_source = driver.page_source # Keep page source for fallback
-        links = driver.find_elements(By.TAG_NAME, 'a')
-        a_tags = [{'href': link.get_attribute('href')} for link in links if link.get_attribute('href')]
-        driver.quit() # Quit driver after finding links
-        driver = None # Reset driver variable
+        while True:
+            log = next(sitemap_scraper)
+            if log: yield log
+    except StopIteration as e:
+        sitemap_items = e.value
+    except Exception as e:
+        yield f"An error occurred during sitemap scrape: {e}"
 
-        # For processing the links, we can be faster and use cloudscraper
+    if sitemap_items:
+        items.extend(sitemap_items)
+        # If sitemap is found and has content, we can often just stop here.
+        yield "Sitemap found and processed. Assuming it's comprehensive."
+        unique_items = {item['source_url']: item for item in items}.values()
+        return list(unique_items)
+    
+    yield "Sitemap not found or empty."
+
+    # --- Step 2: Static Scrape (No Selenium) ---
+    yield "Phase 2: Attempting static scrape..."
+    processed_urls = set()
+    try:
         scraper = cloudscraper.create_scraper()
+        response = scraper.get(url, timeout=15)
+        response.raise_for_status()
+        
+        soup = BeautifulSoup(response.text, 'html.parser')
+        a_tags = [{'href': a.get('href')} for a in soup.find_all('a') if a.get('href')]
+        
+        yield f"Found {len(a_tags)} links via static scrape. Processing..."
 
         for a_tag in a_tags:
+            # (Logic for processing links is the same as before)
             link = a_tag['href']
             full_url = urljoin(url, link)
             parsed_url = urlparse(full_url)
@@ -113,69 +139,93 @@ def scrape_url(url):
             if clean_url in processed_urls or urlparse(url).netloc != parsed_url.netloc or clean_url == url:
                 continue
 
-            # Heuristic to identify article-like URLs.
-            # Articles often have longer paths with multiple segments or hyphens.
             path_segments = parsed_url.path.strip('/').split('/')
             if len(path_segments) < 2 and '-' not in path_segments[-1]:
-                logging.info(f"Skipping non-article-like link: {clean_url}")
                 continue
-
+            
             processed_urls.add(clean_url)
-
-            logging.info(f"Processing link: {clean_url}")
             try:
-                # Use cloudscraper for speed when processing individual links
                 page_content = scraper.get(clean_url, timeout=15).text
-                
                 content = trafilatura.extract(page_content)
-
                 if content and len(content) > 200:
-                    logging.info(f"Found article: {clean_url} | Length: {len(content)}")
+                    yield f"Found article (static): {clean_url}"
                     title_soup = BeautifulSoup(page_content, 'html.parser')
                     title = title_soup.title.string if title_soup.title else "No Title Found"
-                    
                     items.append({
                         "title": title,
                         "content": md(content, heading_style="ATX"),
-                        "content_type": "blog",
-                        "source_url": clean_url,
-                        "author": "",
-                        "user_id": ""
+                        "content_type": "blog", "source_url": clean_url,
+                        "author": "", "user_id": ""
                     })
             except Exception as e:
-                logging.error(f"Could not process link {clean_url}. Reason: {e}")
-        
-        # Fallback to scrape the main page if no articles were found from links
-        if not items:
-            logging.info("No articles found in links, trying the main URL itself.")
-            content = trafilatura.extract(page_source)
-            if content and len(content) > 200:
-                soup = BeautifulSoup(page_source, 'html.parser')
-                title = soup.title.string if soup.title else "No Title Found"
-                items.append({
-                    "title": title,
-                    "content": md(content, heading_style="ATX"),
-                    "content_type": "blog",
-                    "source_url": url,
-                    "author": "",
-                    "user_id": ""
-                })
+                yield f"Could not process static link {clean_url}. Reason: {e}"
 
     except Exception as e:
-        logging.error(f"Could not scrape {url}. Reason: {e}")
-    finally:
-        if driver: # Ensure driver is always quit even if errors occur
-            driver.quit()
+        yield f"Static scrape failed for base URL {url}. Reason: {e}"
 
-    # Remove duplicates
+    # --- Step 3: Fallback to Selenium if needed ---
+    if not items and use_selenium:
+        yield "Phase 3: Static scrape yielded no results. Falling back to Selenium..."
+        driver = None
+        try:
+            yield "Initializing web driver..."
+            driver = get_driver(url)
+            yield "Web driver initialized successfully."
+            page_source = driver.page_source
+            links = driver.find_elements(By.TAG_NAME, 'a')
+            a_tags = [{'href': link.get_attribute('href')} for link in links if link.get_attribute('href')]
+            driver.quit() 
+            driver = None 
+
+            yield f"Found {len(a_tags)} links via Selenium. Processing..."
+            scraper = cloudscraper.create_scraper() # Reuse fast scraper for processing
+
+            for a_tag in a_tags:
+                link = a_tag['href']
+                full_url = urljoin(url, link)
+                parsed_url = urlparse(full_url)
+                clean_url = parsed_url._replace(query="", fragment="").geturl()
+
+                if clean_url in processed_urls or urlparse(url).netloc != parsed_url.netloc or clean_url == url:
+                    continue
+
+                path_segments = parsed_url.path.strip('/').split('/')
+                if len(path_segments) < 2 and '-' not in path_segments[-1]:
+                    continue
+
+                processed_urls.add(clean_url)
+                try:
+                    page_content = scraper.get(clean_url, timeout=15).text
+                    content = trafilatura.extract(page_content)
+                    if content and len(content) > 200:
+                        yield f"Found article (Selenium): {clean_url}"
+                        title_soup = BeautifulSoup(page_content, 'html.parser')
+                        title = title_soup.title.string if title_soup.title else "No Title Found"
+                        items.append({
+                            "title": title, "content": md(content, heading_style="ATX"),
+                            "content_type": "blog", "source_url": clean_url,
+                            "author": "", "user_id": ""
+                        })
+                except Exception as e:
+                    yield f"Could not process Selenium link {clean_url}. Reason: {e}"
+        except Exception as e:
+            yield f"Could not scrape {url} with Selenium. Reason: {e}"
+        finally:
+            if driver:
+                driver.quit()
+    elif not items and not use_selenium:
+        yield "Phase 3: Static scrape yielded no results. Selenium is disabled. Stopping."
+
+    # --- Final Step: Deduplicate and Return ---
+    yield "Scraping for this source complete. Deduplicating results..."
     unique_items = {item['source_url']: item for item in items}.values()
     return list(unique_items)
 
 
 def scrape_pdf(file_path):
-    """Scrapes a PDF file."""
+    """Scrapes a PDF file. Yields logs, returns items."""
     items = []
-    print(f"Scraping PDF: {file_path}")
+    yield f"Scraping PDF: {file_path}"
     try:
         doc = fitz.open(file_path)
         content = ""
@@ -194,22 +244,56 @@ def scrape_pdf(file_path):
                 "user_id": ""
             })
     except Exception as e:
-        print(f"Could not process PDF {file_path}. Reason: {e}")
+        yield f"Could not process PDF {file_path}. Reason: {e}"
     return items
+
+def run_scraper(sources, team_id="aline123", use_selenium=True):
+    """Main scraping logic. Yields logs and individual JSON items."""
+    total_items_found = 0
+    for s in sources:
+        yield f"Scraping {s}..."
+        scraper_gen = None
+        if s.startswith('http://') or s.startswith('https://'):
+            scraper_gen = scrape_url(s, use_selenium=use_selenium)
+        elif os.path.isfile(s) and s.lower().endswith('.pdf'):
+            scraper_gen = scrape_pdf(s)
+        else:
+            yield f"Unsupported source type for {s}. Skipping."
+            continue
+
+        if scraper_gen:
+            items = []
+            try:
+                while True:
+                    # This will yield logs from the sub-scraper
+                    yield next(scraper_gen)
+            except StopIteration as e:
+                # The generator returns the items when it's done.
+                items = e.value
+            except Exception as e:
+                yield f"A critical error occurred while processing {s}: {e}"
+                continue
+            
+            if items:
+                for item in items:
+                    # Yield each found item as its own JSON message
+                    yield f"___JSON_ITEM___{json.dumps(item)}"
+                    total_items_found += 1
+    
+    yield f"Scraping complete. Found {total_items_found} total items. You can now download the results."
 
 def main():
     """Main function to run the scraper."""
     parser = argparse.ArgumentParser(description="Scrape content from websites and PDFs into a knowledgebase format.")
     parser.add_argument("source", help="The URL of the website, path to a PDF file, or path to a CSV file of sources.")
     parser.add_argument("--team_id", default="aline123", help="The team ID for the knowledgebase.")
-    parser.add_argument("-o", "--output", default="output.json", help="The name of the output JSON file.")
+    parser.add_argument("--no-selenium", action="store_true", help="Disable the use of Selenium for scraping.")
     
     args = parser.parse_args()
     source = args.source
     team_id = args.team_id
-    output_file = args.output
+    use_selenium = not args.no_selenium
 
-    all_items = []
     sources_to_scrape = []
 
     if source.lower().endswith('.csv'):
@@ -221,24 +305,11 @@ def main():
     else:
         sources_to_scrape.append(source)
     
-    for s in sources_to_scrape:
-        print(f"Scraping {s}...")
-        if s.startswith('http://') or s.startswith('https://'):
-            all_items.extend(scrape_url(s))
-        elif os.path.isfile(s) and s.lower().endswith('.pdf'):
-            all_items.extend(scrape_pdf(s))
-        else:
-            print(f"Unsupported source type for {s}. Skipping.")
-
-    output = {
-        "team_id": team_id,
-        "items": all_items
-    }
-
-    with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
-
-    print(f"Scraping complete. Output saved to {output_file}")
+    # To see logs in console when running from command line
+    for log in run_scraper(sources_to_scrape, team_id=team_id, use_selenium=use_selenium):
+        # Don't print the JSON payload to the console, just the logs.
+        if not log.startswith('___JSON_ITEM___'):
+            print(log)
 
 if __name__ == "__main__":
     main() 
