@@ -1,0 +1,8 @@
+requests
+beautifulsoup4
+trafilatura
+markdownify
+PyMuPDF
+cloudscraper
+selenium
+webdriver-manager 

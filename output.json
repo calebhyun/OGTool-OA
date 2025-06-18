@@ -1,0 +1,13 @@
+{
+  "team_id": "aline123",
+  "items": [
+    {
+      "title": "book_sample.pdf",
+      "content": "This is a test PDF to simulate scraping Aline's book.\nThis file will be used to verify that the PDF scraping functionality in scraper.py works as expected.\nIt contains some text across multiple pages.\nPage 2 of the test PDF.\nPage 3 of the test PDF.\nPage 4 of the test PDF.\nPage 5 of the test PDF.\nPage 6 of the test PDF.\nPage 7 of the test PDF.\nPage 8 of the test PDF.\n",
+      "content_type": "book",
+      "source_url": "",
+      "author": "",
+      "user_id": ""
+    }
+  ]
+}
