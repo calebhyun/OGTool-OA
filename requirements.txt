@@ -10,4 +10,5 @@ Flask
 Flask-SocketIO
 python-socketio[client]
 gevent
-gevent-websocket 
+gevent-websocket
+gunicorn 

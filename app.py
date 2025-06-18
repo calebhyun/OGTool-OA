@@ -33,12 +33,13 @@ def index():
 @app.route('/scrape_pdf', methods=['POST'])
 def scrape_pdf_endpoint():
     pdf_file = request.files.get('pdf_file')
-    if pdf_file:
-        filename = str(uuid.uuid4())
+    if pdf_file and pdf_file.filename.lower().endswith('.pdf'):
+        # Append .pdf to the UUID filename to preserve the extension
+        filename = str(uuid.uuid4()) + ".pdf"
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         pdf_file.save(filepath)
         return {'pdf_id': filename}
-    return {'error': 'No PDF file found'}, 400
+    return {'error': 'No PDF file found or file is not a PDF'}, 400
 
 def run_scraper_in_background(sid, sources, use_selenium):
     """A wrapper to run the scraper and emit messages over WebSocket."""

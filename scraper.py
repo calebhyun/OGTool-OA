@@ -40,7 +40,13 @@ def get_driver(url):
     options.add_argument('--log-level=3')  # Suppress console logs
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
-    service = ChromeService(ChromeDriverManager().install(), log_output=os.devnull)
+    # Check if running on Heroku and set Chrome options accordingly
+    if "GOOGLE_CHROME_BIN" in os.environ:
+        options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        service = ChromeService(executable_path=os.environ.get("CHROMEDRIVER_PATH"), log_output=os.devnull)
+    else:
+        # Local development
+        service = ChromeService(ChromeDriverManager().install(), log_output=os.devnull)
     
     driver = webdriver.Chrome(service=service, options=options)
     driver.get(url)
