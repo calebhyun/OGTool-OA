@@ -1,7 +1,19 @@
-2025-06-18 13:07:17,750 - INFO - ====== WebDriver manager ======
-2025-06-18 13:07:19,050 - INFO - Get LATEST chromedriver version for google-chrome
-2025-06-18 13:07:19,085 - INFO - Get LATEST chromedriver version for google-chrome
-2025-06-18 13:07:19,120 - INFO - Driver [C:\Users\caleb\.wdm\drivers\chromedriver\win64\137.0.7151.119\chromedriver-win32/chromedriver.exe] found in cache
-2025-06-18 13:08:01,008 - ERROR - parsed tree length: 0, wrong data type or not valid HTML
-2025-06-18 13:08:01,009 - ERROR - empty HTML tree: None
-2025-06-18 13:08:01,009 - WARNING - discarding data: None
+2025-06-18 13:48:58,170 - INFO - 127.0.0.1 - - [2025-06-18 13:48:58] "GET /socket.io/?EIO=4&transport=polling&t=PU4pLBx HTTP/1.1" 200 276 0.000999
+2025-06-18 13:48:58,181 - INFO - 127.0.0.1 - - [2025-06-18 13:48:58] "POST /socket.io/?EIO=4&transport=polling&t=PU4pLC_&sid=KdTp-Rb6B5kgy4jeAAAA HTTP/1.1" 200 195 0.000998
+2025-06-18 13:48:58,183 - INFO - 127.0.0.1 - - [2025-06-18 13:48:58] "GET /socket.io/?EIO=4&transport=polling&t=PU4pLD1&sid=KdTp-Rb6B5kgy4jeAAAA HTTP/1.1" 200 157 0.000000
+2025-06-18 13:48:59,001 - INFO - 127.0.0.1 - - [2025-06-18 13:48:59] "GET / HTTP/1.1" 200 1591 0.010581
+2025-06-18 13:48:59,162 - INFO - 127.0.0.1 - - [2025-06-18 13:48:59] "GET /static/style.css HTTP/1.1" 200 2141 0.053019
+2025-06-18 13:48:59,164 - INFO - 127.0.0.1 - - [2025-06-18 13:48:59] "GET /static/script.js HTTP/1.1" 200 3763 0.001022
+2025-06-18 13:48:59,243 - INFO - 127.0.0.1 - - [2025-06-18 13:48:59] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 331 0.000964
+2025-06-18 13:49:12,242 - INFO - 127.0.0.1 - - [2025-06-18 13:49:12] "GET /socket.io/?EIO=4&transport=polling&t=PU4pOeh HTTP/1.1" 200 276 0.001002
+2025-06-18 13:49:12,532 - INFO - 127.0.0.1 - - [2025-06-18 13:49:12] "POST /socket.io/?EIO=4&transport=polling&t=PU4pOet&sid=tVh2fyjBlT5BGmQGAAAC HTTP/1.1" 200 195 0.002002
+2025-06-18 13:49:12,534 - INFO - 127.0.0.1 - - [2025-06-18 13:49:12] "GET /socket.io/?EIO=4&transport=polling&t=PU4pOev&sid=tVh2fyjBlT5BGmQGAAAC HTTP/1.1" 200 189 0.000000
+2025-06-18 13:49:12,542 - INFO - 127.0.0.1 - - [2025-06-18 13:49:12] "POST /socket.io/?EIO=4&transport=polling&t=PU4pOjQ&sid=tVh2fyjBlT5BGmQGAAAC HTTP/1.1" 200 195 0.000000
+2025-06-18 13:49:12,603 - INFO - 127.0.0.1 - - [2025-06-18 13:49:12] "GET /socket.io/?EIO=4&transport=polling&t=PU4pOjR&sid=tVh2fyjBlT5BGmQGAAAC HTTP/1.1" 200 157 0.001011
+2025-06-18 13:49:56,310 - INFO - 127.0.0.1 - - [2025-06-18 13:49:56] "GET /socket.io/?EIO=4&transport=polling&t=PU4pZOG HTTP/1.1" 200 276 0.000998
+2025-06-18 13:49:56,317 - INFO - 127.0.0.1 - - [2025-06-18 13:49:56] "POST /socket.io/?EIO=4&transport=polling&t=PU4pZPP&sid=cCJjd2TMDHmD7ND4AAAE HTTP/1.1" 200 195 0.001005
+2025-06-18 13:49:56,320 - INFO - 127.0.0.1 - - [2025-06-18 13:49:56] "GET /socket.io/?EIO=4&transport=polling&t=PU4pZPQ&sid=cCJjd2TMDHmD7ND4AAAE HTTP/1.1" 200 189 0.000000
+2025-06-18 13:49:56,328 - INFO - 127.0.0.1 - - [2025-06-18 13:49:56] "POST /socket.io/?EIO=4&transport=polling&t=PU4pZPZ&sid=cCJjd2TMDHmD7ND4AAAE HTTP/1.1" 200 195 0.001012
+2025-06-18 13:49:56,382 - INFO - 127.0.0.1 - - [2025-06-18 13:49:56] "GET /socket.io/?EIO=4&transport=polling&t=PU4pZPa&sid=cCJjd2TMDHmD7ND4AAAE HTTP/1.1" 200 157 0.001012
+2025-06-18 13:50:21,264 - INFO - ====== WebDriver manager ======
+2025-06-18 13:50:22,628 - INFO - Get LATEST chromedriver version for google-chrome

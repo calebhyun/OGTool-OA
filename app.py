@@ -5,9 +5,17 @@ import os
 import scraper
 import time
 import uuid
+import logging
+from gevent import monkey
+monkey.patch_all()
+
+# Silence noisy loggers
+logging.getLogger('trafilatura').setLevel(logging.CRITICAL)
+logging.getLogger('webdriver_manager').setLevel(logging.CRITICAL)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!' # Required for SocketIO
+# Wrap the app with SocketIO
 socketio = SocketIO(app, async_mode='gevent')
 
 UPLOAD_FOLDER = 'uploads'
@@ -20,6 +28,7 @@ if not os.path.exists(UPLOAD_FOLDER):
 def index():
     return render_template('index.html')
 
+# PDF upload remains a standard HTTP endpoint
 @app.route('/scrape_pdf', methods=['POST'])
 def scrape_pdf_endpoint():
     pdf_file = request.files.get('pdf_file')
@@ -32,29 +41,25 @@ def scrape_pdf_endpoint():
 
 def run_scraper_in_background(sid, sources, use_selenium):
     """A wrapper to run the scraper and emit messages over WebSocket."""
-    try:
-        for message in scraper.run_scraper(sources, use_selenium=use_selenium):
-            if message and message.startswith('___JSON_ITEM___'):
-                payload = message[15:]
-                if payload:
-                    try:
-                        json_data = json.loads(payload)
-                        # Emit each item as it's found
-                        socketio.emit('json_item', json_data, to=sid)
-                    except json.JSONDecodeError:
-                        socketio.emit('log_message', {'data': f"FATAL: Server failed to decode item data."}, to=sid)
-            elif message:
-                socketio.emit('log_message', {'data': message}, to=sid)
-        
-        # Explicitly signal completion before disconnecting
-        socketio.emit('scrape_complete', {'data': 'Scraping process finished.'}, to=sid)
+    with app.app_context():
+        try:
+            for message in scraper.run_scraper(sources, use_selenium=use_selenium):
+                if message and message.startswith('___JSON_ITEM___'):
+                    payload = message[15:]
+                    if payload:
+                        try:
+                            json_data = json.loads(payload)
+                            socketio.emit('json_item', json_data, to=sid)
+                        except json.JSONDecodeError:
+                            socketio.emit('log_message', {'data': f"FATAL: Server failed to decode item data."}, to=sid)
+                elif message:
+                    socketio.emit('log_message', {'data': message}, to=sid)
+            
+            socketio.emit('scrape_complete', {'data': 'Scraping process finished.'}, to=sid)
 
-    except Exception as e:
-        app.logger.error(f"An error occurred in background task: {e}", exc_info=True)
-        socketio.emit('log_message', {'data': f"FATAL: A server error occurred in the background task: {e}"}, to=sid)
-    finally:
-        # Ensure the client is always disconnected when the task is done
-        socketio.disconnect(sid)
+        except Exception as e:
+            app.logger.error(f"An error occurred in background task: {e}", exc_info=True)
+            socketio.emit('log_message', {'data': f"FATAL: A server error occurred in the background task: {e}"}, to=sid)
 
 @socketio.on('scrape_request')
 def handle_scrape_request(data):
@@ -73,7 +78,6 @@ def handle_scrape_request(data):
         if os.path.exists(filepath):
             sources.append(filepath)
 
-    # Launch the scraper in a background thread so the main server is not blocked
     socketio.start_background_task(
         run_scraper_in_background, 
         sid=sid, 
@@ -82,6 +86,6 @@ def handle_scrape_request(data):
     )
 
 if __name__ == '__main__':
-    # Use socketio.run to start the gevent-based server
     port = int(os.environ.get("PORT", 5000))
-    socketio.run(app, host="0.0.0.0", port=port) 
+    # Use socketio.run to start a gevent-based server
+    socketio.run(app, host='0.0.0.0', port=port) 

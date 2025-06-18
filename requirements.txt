@@ -8,5 +8,6 @@ selenium
 webdriver-manager
 Flask
 Flask-SocketIO
+python-socketio[client]
 gevent
-python-socketio[client] 
+gevent-websocket 

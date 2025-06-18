@@ -13,6 +13,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 import re
 import csv
@@ -22,6 +24,12 @@ logging.getLogger('webdriver_manager').setLevel(logging.WARNING)
 
 logging.basicConfig(filename='log.txt', level=logging.INFO, 
                     format='%(asctime)s - %(levelname)s - %(message)s', filemode='w')
+
+def truncate_content(text, max_length=200):
+    """Truncates text to a max length, adding an ellipsis."""
+    if len(text) > max_length:
+        return text[:max_length] + "..."
+    return text
 
 def get_driver(url):
     """Gets a selenium driver for a given URL."""
@@ -36,7 +44,14 @@ def get_driver(url):
     
     driver = webdriver.Chrome(service=service, options=options)
     driver.get(url)
-    time.sleep(5) 
+    try:
+        # Wait for body to be present, max 2 seconds.
+        WebDriverWait(driver, 2).until(
+            EC.presence_of_element_located((By.TAG_NAME, "body"))
+        )
+    except Exception:
+        # If it times out, just continue. The page might be very slow or simple.
+        pass
     return driver
 
 def scrape_sitemap(url):
@@ -46,10 +61,10 @@ def scrape_sitemap(url):
     sitemap_url = urlunparse((parsed_url.scheme, parsed_url.netloc, 'sitemap.xml', '', '', ''))
     
     yield f"Trying to find sitemap at: {sitemap_url}"
-    
+    yield "(This may take up to 2 seconds if the sitemap doesn't exist...)"
     try:
         scraper = cloudscraper.create_scraper()
-        response = scraper.get(sitemap_url, timeout=15)
+        response = scraper.get(sitemap_url, timeout=2)
         response.raise_for_status()
         
         sitemap_soup = BeautifulSoup(response.content, 'xml')
@@ -63,14 +78,14 @@ def scrape_sitemap(url):
         for blog_url in blog_urls:
             try:
                 yield f"Scraping from sitemap URL: {blog_url}"
-                page_content = scraper.get(blog_url, timeout=15).text
+                page_content = scraper.get(blog_url, timeout=2).text
                 content = trafilatura.extract(page_content)
                 if content and len(content) > 300:
                     title_soup = BeautifulSoup(page_content, 'html.parser')
                     title = title_soup.title.string if title_soup.title else "No Title Found"
                     items.append({
                         "title": title,
-                        "content": md(content, heading_style="ATX"),
+                        "content": truncate_content(md(content, heading_style="ATX")),
                         "content_type": "blog",
                         "source_url": blog_url,
                         "author": "",
@@ -118,10 +133,11 @@ def scrape_url(url, use_selenium=True):
 
     # --- Step 2: Static Scrape (No Selenium) ---
     yield "Phase 2: Attempting static scrape..."
+    yield "(This may take up to 2 seconds...)"
     processed_urls = set()
     try:
         scraper = cloudscraper.create_scraper()
-        response = scraper.get(url, timeout=15)
+        response = scraper.get(url, timeout=2)
         response.raise_for_status()
         
         soup = BeautifulSoup(response.text, 'html.parser')
@@ -145,7 +161,7 @@ def scrape_url(url, use_selenium=True):
             
             processed_urls.add(clean_url)
             try:
-                page_content = scraper.get(clean_url, timeout=15).text
+                page_content = scraper.get(clean_url, timeout=2).text
                 content = trafilatura.extract(page_content)
                 if content and len(content) > 200:
                     yield f"Found article (static): {clean_url}"
@@ -153,7 +169,7 @@ def scrape_url(url, use_selenium=True):
                     title = title_soup.title.string if title_soup.title else "No Title Found"
                     items.append({
                         "title": title,
-                        "content": md(content, heading_style="ATX"),
+                        "content": truncate_content(md(content, heading_style="ATX")),
                         "content_type": "blog", "source_url": clean_url,
                         "author": "", "user_id": ""
                     })
@@ -168,7 +184,7 @@ def scrape_url(url, use_selenium=True):
         yield "Phase 3: Static scrape yielded no results. Falling back to Selenium..."
         driver = None
         try:
-            yield "Initializing web driver..."
+            yield "Initializing web driver... (this can be slow, please wait)"
             driver = get_driver(url)
             yield "Web driver initialized successfully."
             page_source = driver.page_source
@@ -195,14 +211,15 @@ def scrape_url(url, use_selenium=True):
 
                 processed_urls.add(clean_url)
                 try:
-                    page_content = scraper.get(clean_url, timeout=15).text
+                    page_content = scraper.get(clean_url, timeout=2).text
                     content = trafilatura.extract(page_content)
                     if content and len(content) > 200:
                         yield f"Found article (Selenium): {clean_url}"
                         title_soup = BeautifulSoup(page_content, 'html.parser')
                         title = title_soup.title.string if title_soup.title else "No Title Found"
                         items.append({
-                            "title": title, "content": md(content, heading_style="ATX"),
+                            "title": title, 
+                            "content": truncate_content(md(content, heading_style="ATX")),
                             "content_type": "blog", "source_url": clean_url,
                             "author": "", "user_id": ""
                         })
@@ -237,7 +254,7 @@ def scrape_pdf(file_path):
         if content:
             items.append({
                 "title": os.path.basename(file_path),
-                "content": content, # PDF content is already text, no need for markdown conversion
+                "content": truncate_content(content), # PDF content is already text
                 "content_type": "book",
                 "source_url": "",
                 "author": "",

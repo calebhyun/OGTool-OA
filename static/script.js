@@ -70,6 +70,7 @@ document.getElementById('scrape-form').addEventListener('submit', function(event
         logs.innerHTML += msg.data + '<br>';
         logs.scrollTop = logs.scrollHeight;
 
+        // Assemble the final JSON and create the download link
         if (collectedItems.length > 0) {
             const finalJson = {
                 team_id: "aline123",
@@ -89,6 +90,7 @@ document.getElementById('scrape-form').addEventListener('submit', function(event
         } else {
             logs.innerHTML += 'No items were found to download.<br>';
         }
+        socket.disconnect();
     });
 
     socket.on('disconnect', function() {
