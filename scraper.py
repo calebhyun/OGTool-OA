@@ -313,8 +313,7 @@ def scrape_pdf(file_path):
     try:
         doc = fitz.open(file_path)
         content = ""
-        # Scrape first 8 chapters (or pages, as PDFs don't have chapter markers)
-        for page_num in range(min(8, doc.page_count)):
+        for page_num in range(doc.page_count):
             page = doc.load_page(page_num)
             content += page.get_text()
         
