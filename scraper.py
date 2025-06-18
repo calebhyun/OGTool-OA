@@ -259,28 +259,30 @@ def scrape_url(url, use_selenium=True):
             scraper = cloudscraper.create_scraper() # Reuse fast scraper for processing
 
             for a_tag in a_tags:
-                link = a_tag.get('href')
-
-                # Add defensive check for None links
-                if not link:
-                    yield "[Debug] Skipping a None link found in a_tags."
-                    continue
-                
-                yield f"[Debug] Processing Selenium link: {link}"
-
-                full_url = urljoin(url, link)
-                parsed_url = urlparse(full_url)
-                clean_url = parsed_url._replace(query="", fragment="").geturl()
-
-                if clean_url in processed_urls or urlparse(url).netloc != parsed_url.netloc or clean_url == url:
-                    continue
-
-                path_segments = parsed_url.path.strip('/').split('/')
-                if not ( (len(path_segments) >= 1 and '-' in path_segments[-1]) or 'articles' in path_segments ):
-                    continue
-
-                processed_urls.add(clean_url)
                 try:
+                    link = a_tag.get('href')
+
+                    # Add defensive check for None links
+                    if not link:
+                        yield "[Debug] Skipping a None link found in a_tags."
+                        continue
+                    
+                    yield f"[Debug] Processing Selenium link: {link}"
+
+                    full_url = urljoin(url, link)
+                    parsed_url = urlparse(full_url)
+                    clean_url = parsed_url._replace(query="", fragment="").geturl()
+
+                    if clean_url in processed_urls or urlparse(url).netloc != parsed_url.netloc or clean_url == url:
+                        continue
+
+                    # Looser path segment check: check for at least 1 segment and a dash, OR just /articles/
+                    path_segments = parsed_url.path.strip('/').split('/')
+                    if not ( (len(path_segments) >= 1 and '-' in path_segments[-1]) or 'articles' in path_segments ):
+                        continue
+
+                    processed_urls.add(clean_url)
+                    
                     page_content = scraper.get(clean_url, timeout=15).text
                     content = trafilatura.extract(page_content)
                     if content and len(content) > 200:
@@ -293,7 +295,10 @@ def scrape_url(url, use_selenium=True):
                             "author": "", "user_id": ""
                         })
                 except Exception as e:
-                    yield f"Could not process Selenium link {clean_url}. Reason: {e}"
+                    import traceback
+                    yield f"Error processing link {link}. Reason: {e}"
+                    yield f"Traceback: {traceback.format_exc()}"
+                    continue
         except Exception as e:
             yield f"Could not scrape {url} with Selenium. Reason: {e}"
         finally:
