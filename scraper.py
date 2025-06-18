@@ -73,7 +73,7 @@ def scrape_sitemap(url):
         yield f"Found {len(urls)} URLs in sitemap."
         
         # Filter for blog-like URLs from the sitemap
-        blog_urls = [u for u in urls if '/blog/' in u or '/post/' in u or re.search(r'/\\d{4}/\\d{2}/', u)]
+        blog_urls = [u for u in urls if '/blog/' in u or '/post/' in u or '/article/' in u or re.search(r'/\\d{4}/\\d{2}/', u)]
 
         for blog_url in blog_urls:
             try:
@@ -85,7 +85,7 @@ def scrape_sitemap(url):
                     title = title_soup.title.string if title_soup.title else "No Title Found"
                     items.append({
                         "title": title,
-                        "content": truncate_content(md(content, heading_style="ATX")),
+                        "content": md(content, heading_style="ATX"),
                         "content_type": "blog",
                         "source_url": blog_url,
                         "author": "",
@@ -152,11 +152,14 @@ def scrape_url(url, use_selenium=True):
             parsed_url = urlparse(full_url)
             clean_url = parsed_url._replace(query="", fragment="").geturl()
 
+            yield f"Processing link: {clean_url}"
+
             if clean_url in processed_urls or urlparse(url).netloc != parsed_url.netloc or clean_url == url:
                 continue
 
+            # Looser path segment check: check for at least 1 segment and a dash, OR just /articles/
             path_segments = parsed_url.path.strip('/').split('/')
-            if len(path_segments) < 2 and '-' not in path_segments[-1]:
+            if not ( (len(path_segments) >= 1 and '-' in path_segments[-1]) or 'articles' in path_segments ):
                 continue
             
             processed_urls.add(clean_url)
@@ -169,7 +172,7 @@ def scrape_url(url, use_selenium=True):
                     title = title_soup.title.string if title_soup.title else "No Title Found"
                     items.append({
                         "title": title,
-                        "content": truncate_content(md(content, heading_style="ATX")),
+                        "content": md(content, heading_style="ATX"),
                         "content_type": "blog", "source_url": clean_url,
                         "author": "", "user_id": ""
                     })
@@ -184,12 +187,62 @@ def scrape_url(url, use_selenium=True):
         yield "Phase 3: Static scrape yielded no results. Falling back to Selenium..."
         driver = None
         try:
-            yield "Initializing web driver... (this can be slow, please wait)"
+            yield "Initializing web driver..."
             driver = get_driver(url)
             yield "Web driver initialized successfully."
-            page_source = driver.page_source
-            links = driver.find_elements(By.TAG_NAME, 'a')
-            a_tags = [{'href': link.get_attribute('href')} for link in links if link.get_attribute('href')]
+
+            article_urls_from_selenium = set()
+            
+            # Get standard <a> tag links first
+            initial_links = driver.find_elements(By.TAG_NAME, 'a')
+            for link in initial_links:
+                href = link.get_attribute('href')
+                if href:
+                    article_urls_from_selenium.add(href)
+            
+            # New logic for SPAs: find clickable elements, click them, get URL
+            try:
+                article_elements_selector = "div[style*='cursor:pointer']"
+                WebDriverWait(driver, 5).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, article_elements_selector))
+                )
+                
+                num_articles = len(driver.find_elements(By.CSS_SELECTOR, article_elements_selector))
+                yield f"Found {num_articles} potential JavaScript-driven article links. Discovering URLs..."
+
+                for i in range(num_articles):
+                    # Re-find elements each time to avoid staleness
+                    current_elements = driver.find_elements(By.CSS_SELECTOR, article_elements_selector)
+                    if i >= len(current_elements):
+                        break 
+                    
+                    element_to_click = current_elements[i]
+                    
+                    try:
+                        driver.execute_script("arguments[0].scrollIntoView(true);", element_to_click)
+                        time.sleep(0.5)
+                        element_to_click.click()
+                    except Exception:
+                        try:
+                            driver.execute_script("arguments[0].click();", element_to_click)
+                        except Exception as js_click_error:
+                            yield f"Could not click element {i}. Skipping. Error: {js_click_error}"
+                            continue
+
+                    WebDriverWait(driver, 10).until(lambda d: d.current_url != url)
+                    discovered_url = driver.current_url
+                    if discovered_url not in article_urls_from_selenium:
+                        yield f"Discovered URL: {discovered_url}"
+                        article_urls_from_selenium.add(discovered_url)
+                    
+                    driver.back()
+                    WebDriverWait(driver, 10).until(
+                        EC.presence_of_element_located((By.CSS_SELECTOR, article_elements_selector))
+                    )
+            except Exception as e:
+                yield f"Could not execute JavaScript link discovery. Proceeding with standard links. Reason: {e}"
+
+            a_tags = [{'href': u} for u in article_urls_from_selenium]
             driver.quit() 
             driver = None 
 
@@ -202,24 +255,25 @@ def scrape_url(url, use_selenium=True):
                 parsed_url = urlparse(full_url)
                 clean_url = parsed_url._replace(query="", fragment="").geturl()
 
+                yield f"Processing link (Selenium): {clean_url}"
+
                 if clean_url in processed_urls or urlparse(url).netloc != parsed_url.netloc or clean_url == url:
                     continue
 
                 path_segments = parsed_url.path.strip('/').split('/')
-                if len(path_segments) < 2 and '-' not in path_segments[-1]:
+                if not ( (len(path_segments) >= 1 and '-' in path_segments[-1]) or 'articles' in path_segments ):
                     continue
 
                 processed_urls.add(clean_url)
                 try:
-                    page_content = scraper.get(clean_url, timeout=2).text
+                    page_content = scraper.get(clean_url, timeout=15).text
                     content = trafilatura.extract(page_content)
                     if content and len(content) > 200:
                         yield f"Found article (Selenium): {clean_url}"
                         title_soup = BeautifulSoup(page_content, 'html.parser')
                         title = title_soup.title.string if title_soup.title else "No Title Found"
                         items.append({
-                            "title": title, 
-                            "content": truncate_content(md(content, heading_style="ATX")),
+                            "title": title, "content": md(content, heading_style="ATX"),
                             "content_type": "blog", "source_url": clean_url,
                             "author": "", "user_id": ""
                         })
@@ -254,7 +308,7 @@ def scrape_pdf(file_path):
         if content:
             items.append({
                 "title": os.path.basename(file_path),
-                "content": truncate_content(content), # PDF content is already text
+                "content": content, # PDF content is already text
                 "content_type": "book",
                 "source_url": "",
                 "author": "",

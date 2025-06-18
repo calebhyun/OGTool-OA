@@ -1,3 +1,6 @@
+from gevent import monkey
+monkey.patch_all()
+
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit
 import json
@@ -6,8 +9,6 @@ import scraper
 import time
 import uuid
 import logging
-from gevent import monkey
-monkey.patch_all()
 
 # Silence noisy loggers
 logging.getLogger('trafilatura').setLevel(logging.CRITICAL)
