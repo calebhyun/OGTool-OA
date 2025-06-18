@@ -31,7 +31,7 @@ def truncate_content(text, max_length=200):
     return text
 
 def get_driver(url):
-    """Gets a selenium driver for a given URL."""
+    """Gets a selenium driver for a given URL using modern Selenium Manager."""
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
@@ -39,17 +39,13 @@ def get_driver(url):
     options.add_argument('--log-level=3')
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
-    # Check if running on Heroku
+    # On Heroku, the buildpack sets the Chrome binary location. Selenium Manager
+    # will automatically detect this and download the matching chromedriver.
     if "GOOGLE_CHROME_BIN" in os.environ:
         options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-        chromedriver_path = os.environ.get("CHROMEDRIVER_PATH")
-        # Add a log to confirm the path is being read
-        print(f"Heroku ChromeDriver Path: {chromedriver_path}")
-        service = ChromeService(executable_path=chromedriver_path, log_output=os.devnull)
-    else:
-        # Local development: import and use webdriver-manager only here
-        from webdriver_manager.chrome import ChromeDriverManager
-        service = ChromeService(ChromeDriverManager().install(), log_output=os.devnull)
+
+    # This simple initialization lets Selenium Manager handle the driver.
+    service = ChromeService(log_output=os.devnull)
     
     driver = webdriver.Chrome(service=service, options=options)
     driver.get(url)
@@ -264,7 +260,6 @@ def scrape_url(url, use_selenium=True):
 
                     # Add defensive check for None links
                     if not link:
-                        yield "[Debug] Skipping a None link found in a_tags."
                         continue
                     
                     yield f"[Debug] Processing Selenium link: {link}"
@@ -295,9 +290,7 @@ def scrape_url(url, use_selenium=True):
                             "author": "", "user_id": ""
                         })
                 except Exception as e:
-                    import traceback
                     yield f"Error processing link {link}. Reason: {e}"
-                    yield f"Traceback: {traceback.format_exc()}"
                     continue
         except Exception as e:
             yield f"Could not scrape {url} with Selenium. Reason: {e}"
