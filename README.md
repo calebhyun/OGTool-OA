@@ -1,4 +1,8 @@
 # Content Scraper for Knowledgebase
+TODO: 
+frontend
+api endpoint
+more testing on different blogs 
 
 This project is a scalable content scraper designed to pull technical knowledge from various sources (blogs, guides, books) and format it into a JSON structure for a knowledgebase. It was built to be a reusable and extendable tool, avoiding custom code for specific websites.
 
