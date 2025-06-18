@@ -259,12 +259,18 @@ def scrape_url(url, use_selenium=True):
             scraper = cloudscraper.create_scraper() # Reuse fast scraper for processing
 
             for a_tag in a_tags:
-                link = a_tag['href']
+                link = a_tag.get('href')
+
+                # Add defensive check for None links
+                if not link:
+                    yield "[Debug] Skipping a None link found in a_tags."
+                    continue
+                
+                yield f"[Debug] Processing Selenium link: {link}"
+
                 full_url = urljoin(url, link)
                 parsed_url = urlparse(full_url)
                 clean_url = parsed_url._replace(query="", fragment="").geturl()
-
-                yield f"Processing link (Selenium): {clean_url}"
 
                 if clean_url in processed_urls or urlparse(url).netloc != parsed_url.netloc or clean_url == url:
                     continue
