@@ -9,6 +9,7 @@ import scraper
 import time
 import uuid
 import logging
+from werkzeug.utils import secure_filename
 
 # Silence noisy loggers
 logging.getLogger('trafilatura').setLevel(logging.CRITICAL)
@@ -33,9 +34,10 @@ def index():
 @app.route('/scrape_pdf', methods=['POST'])
 def scrape_pdf_endpoint():
     pdf_file = request.files.get('pdf_file')
-    if pdf_file and pdf_file.filename.lower().endswith('.pdf'):
-        # Append .pdf to the UUID filename to preserve the extension
-        filename = str(uuid.uuid4()) + ".pdf"
+    if pdf_file and pdf_file.filename and pdf_file.filename.lower().endswith('.pdf'):
+        original_filename = secure_filename(pdf_file.filename)
+        # Create a unique filename that embeds the original name for later retrieval
+        filename = f"{uuid.uuid4()}__{original_filename}"
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         pdf_file.save(filepath)
         return {'pdf_id': filename}

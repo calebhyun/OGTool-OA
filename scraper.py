@@ -304,7 +304,16 @@ def scrape_url(url):
 def scrape_pdf(file_path):
     """Scrapes a PDF file. Yields logs, returns items."""
     items = []
-    yield f"Scraping PDF: {file_path}"
+
+    basename = os.path.basename(file_path)
+    display_name = basename
+    # Try to extract the original filename from the UUID-prefixed version
+    if '__' in basename:
+        parts = basename.split('__', 1)
+        if len(parts) == 2:
+            display_name = parts[1]
+
+    yield f"Scraping PDF: {display_name}"
     try:
         doc = fitz.open(file_path)
         content = ""
@@ -314,7 +323,7 @@ def scrape_pdf(file_path):
         
         if content:
             items.append({
-                "title": os.path.basename(file_path),
+                "title": display_name,
                 "content": content, # PDF content is already text
                 "content_type": "book",
                 "source_url": "",
