@@ -41,11 +41,11 @@ def scrape_pdf_endpoint():
         return {'pdf_id': filename}
     return {'error': 'No PDF file found or file is not a PDF'}, 400
 
-def run_scraper_in_background(sid, sources, use_selenium):
+def run_scraper_in_background(sid, sources):
     """A wrapper to run the scraper and emit messages over WebSocket."""
     with app.app_context():
         try:
-            for message in scraper.run_scraper(sources, use_selenium=use_selenium):
+            for message in scraper.run_scraper(sources):
                 if message and message.startswith('___JSON_ITEM___'):
                     payload = message[15:]
                     if payload:
@@ -69,7 +69,6 @@ def handle_scrape_request(data):
     sid = request.sid
     urls = data.get('urls', '').split()
     pdf_id = data.get('pdf_id')
-    use_selenium = data.get('use_selenium', True)
     
     sources = []
     if urls:
@@ -83,8 +82,7 @@ def handle_scrape_request(data):
     socketio.start_background_task(
         run_scraper_in_background, 
         sid=sid, 
-        sources=sources, 
-        use_selenium=use_selenium
+        sources=sources
     )
 
 if __name__ == '__main__':

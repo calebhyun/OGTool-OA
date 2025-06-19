@@ -1,5 +1,4 @@
 import argparse
-import requests
 import cloudscraper
 from bs4 import BeautifulSoup
 import trafilatura
@@ -25,13 +24,14 @@ logging.basicConfig(filename='log.txt', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s', filemode='w')
 
 def truncate_content(text, max_length=200):
-    """Truncates text to a max length, adding an ellipsis."""
+    """Truncates text to a max length, adding an ellipsis. Used to limit size of output displayed in UI."""
     if len(text) > max_length:
         return text[:max_length] + "..."
     return text
 
 def get_driver(url):
-    """Gets a selenium driver for a given URL using modern Selenium Manager."""
+    """Gets a selenium driver for a given URL using modern Selenium Manager.
+    This is used to scrape JavaScript-driven websites that don't return static HTML."""
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
@@ -105,17 +105,17 @@ def scrape_sitemap(url):
     return items
 
 
-def scrape_url(url, use_selenium=True):
+def scrape_url(url):
     """
     Scrapes a single URL. 
     First attempts a static scrape. If no articles are found, 
-    falls back to Selenium if use_selenium is True.
+    falls back to Selenium.
     Yields logs, returns items.
     """
     items = []
 
     # --- Step 1: Try Sitemap ---
-    yield "Phase 1: Attempting to scrape sitemap..."
+    yield "Try 1: Attempting to scrape sitemap..."
     sitemap_scraper = scrape_sitemap(url)
     sitemap_items = []
     try:
@@ -137,8 +137,7 @@ def scrape_url(url, use_selenium=True):
     yield "Sitemap not found or empty."
 
     # --- Step 2: Static Scrape (No Selenium) ---
-    yield "Phase 2: Attempting static scrape..."
-    yield "(This may take up to 2 seconds...)"
+    yield "Try 2: Attempting static scrape..."
     processed_urls = set()
     try:
         scraper = cloudscraper.create_scraper()
@@ -151,7 +150,6 @@ def scrape_url(url, use_selenium=True):
         yield f"Found {len(a_tags)} links via static scrape. Processing..."
 
         for a_tag in a_tags:
-            # (Logic for processing links is the same as before)
             link = a_tag['href']
             full_url = urljoin(url, link)
             parsed_url = urlparse(full_url)
@@ -187,9 +185,9 @@ def scrape_url(url, use_selenium=True):
     except Exception as e:
         yield f"Static scrape failed for base URL {url}. Reason: {e}"
 
-    # --- Step 3: Fallback to Selenium if needed ---
-    if not items and use_selenium:
-        yield "Phase 3: Static scrape yielded no results. Falling back to Selenium..."
+    # --- Step 3: Fallback to Selenium ---
+    if not items:
+        yield "Try 3: Static scrape yielded no results. Falling back to Selenium..."
         driver = None
         try:
             yield "Initializing web driver..."
@@ -205,7 +203,7 @@ def scrape_url(url, use_selenium=True):
                 if href:
                     article_urls_from_selenium.add(href)
             
-            # New logic for SPAs: find clickable elements, click them, get URL
+            # New logic for SPAs (specifically quill.co): find clickable elements, click them, get URL
             try:
                 article_elements_selector = "div[style*='cursor:pointer']"
                 WebDriverWait(driver, 5).until(
@@ -258,11 +256,10 @@ def scrape_url(url, use_selenium=True):
                 try:
                     link = a_tag.get('href')
 
-                    # Add defensive check for None links
                     if not link:
                         continue
                     
-                    yield f"[Debug] Processing Selenium link: {link}"
+                    yield f"Processing Selenium link: {link}"
 
                     full_url = urljoin(url, link)
                     parsed_url = urlparse(full_url)
@@ -297,8 +294,6 @@ def scrape_url(url, use_selenium=True):
         finally:
             if driver:
                 driver.quit()
-    elif not items and not use_selenium:
-        yield "Phase 3: Static scrape yielded no results. Selenium is disabled. Stopping."
 
     # --- Final Step: Deduplicate and Return ---
     yield "Scraping for this source complete. Deduplicating results..."
@@ -330,14 +325,14 @@ def scrape_pdf(file_path):
         yield f"Could not process PDF {file_path}. Reason: {e}"
     return items
 
-def run_scraper(sources, team_id="aline123", use_selenium=True):
+def run_scraper(sources, team_id="aline123"):
     """Main scraping logic. Yields logs and individual JSON items."""
     total_items_found = 0
     for s in sources:
         yield f"Scraping {s}..."
         scraper_gen = None
         if s.startswith('http://') or s.startswith('https://'):
-            scraper_gen = scrape_url(s, use_selenium=use_selenium)
+            scraper_gen = scrape_url(s)
         elif os.path.isfile(s) and s.lower().endswith('.pdf'):
             scraper_gen = scrape_pdf(s)
         else:
@@ -370,12 +365,10 @@ def main():
     parser = argparse.ArgumentParser(description="Scrape content from websites and PDFs into a knowledgebase format.")
     parser.add_argument("source", help="The URL of the website, path to a PDF file, or path to a CSV file of sources.")
     parser.add_argument("--team_id", default="aline123", help="The team ID for the knowledgebase.")
-    parser.add_argument("--no-selenium", action="store_true", help="Disable the use of Selenium for scraping.")
     
     args = parser.parse_args()
     source = args.source
     team_id = args.team_id
-    use_selenium = not args.no_selenium
 
     sources_to_scrape = []
 
@@ -389,7 +382,7 @@ def main():
         sources_to_scrape.append(source)
     
     # To see logs in console when running from command line
-    for log in run_scraper(sources_to_scrape, team_id=team_id, use_selenium=use_selenium):
+    for log in run_scraper(sources_to_scrape, team_id=team_id):
         # Don't print the JSON payload to the console, just the logs.
         if not log.startswith('___JSON_ITEM___'):
             print(log)
